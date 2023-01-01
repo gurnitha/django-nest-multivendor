@@ -19,3 +19,16 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         new file:   config/urls.py
         new file:   config/wsgi.py
         new file:   manage.py
+
+#### 1.5 Create a new app: app/core
+
+        (venv3932) λ mkdir app\core
+        (venv3932) λ django-admin startapp core app\core
+
+        new file:   app/core/__init__.py
+        new file:   app/core/admin.py
+        new file:   app/core/apps.py
+        new file:   app/core/migrations/__init__.py
+        new file:   app/core/models.py
+        new file:   app/core/tests.py
+        new file:   app/core/views.py
