@@ -32,3 +32,8 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         new file:   app/core/models.py
         new file:   app/core/tests.py
         new file:   app/core/views.py
+
+#### 1.6 Register core app to config/settings.py, run the server
+
+        modified:   app/core/apps.py
+        modified:   config/settings.py
