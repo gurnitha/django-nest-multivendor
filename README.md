@@ -37,3 +37,12 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   app/core/apps.py
         modified:   config/settings.py
+
+#### 1.7 Hello Wordl using url, view and templates
+
+        new file:   app/core/urls.py
+        modified:   app/core/views.py
+        modified:   config/settings.py
+        modified:   config/urls.py
+        new file:   templates/app/core/index.html
+
