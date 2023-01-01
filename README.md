@@ -61,3 +61,16 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   templates/app/core/index.html
+
+#### 1.11 Template inheritance
+
+        modified:   README.md
+        modified:   templates/app/core/index.html
+        new file:   templates/base.html
+        new file:   templates/partials/footer.html
+        new file:   templates/partials/header.html
+        new file:   templates/partials/modals.html
+        new file:   templates/partials/nav-bar.html
+        new file:   templates/partials/nav-mobile.html
+        new file:   templates/partials/preloader.html
+        new file:   templates/partials/quickview.html
