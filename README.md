@@ -50,3 +50,9 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   .gitignore
         modified:   templates/app/core/index.html
+
+#### 1.9 Setting up static and media files
+
+        modified:   README.md
+        modified:   config/settings.py
+        modified:   config/urls.py
