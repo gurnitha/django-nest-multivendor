@@ -56,3 +56,8 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   README.md
         modified:   config/settings.py
         modified:   config/urls.py
+
+#### 1.10 Add and loading static files
+
+        modified:   README.md
+        modified:   templates/app/core/index.html
