@@ -46,3 +46,7 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   config/urls.py
         new file:   templates/app/core/index.html
 
+#### 1.8 Add html template to index
+
+        modified:   .gitignore
+        modified:   templates/app/core/index.html

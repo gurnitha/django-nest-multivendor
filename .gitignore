@@ -2,6 +2,7 @@
 .env
 static
 venv3932
+docs
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
