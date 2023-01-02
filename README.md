@@ -128,3 +128,8 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         new file:   app/userauth/tests.py
         new file:   app/userauth/views.py
 
+#### 3.2 Register userauth app to config/settings.py
+
+        modified:   README.md
+        modified:   app/userauth/apps.py
+        modified:   config/settings.py
