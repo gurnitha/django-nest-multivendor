@@ -80,3 +80,18 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 #### 2.1 Install psycopg2 driver: pip install psycopg2
 
         modified:   README.md
+
+#### 2.2 Create and connect database with the project
+
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': 'django-nest-multivendor',
+                'USER': 'postgres',
+                'PASSWORD': 'x',
+                'HOST': 'localhost'
+            }
+        }
+
+        modified:   README.md
+        modified:   config/settings.py
