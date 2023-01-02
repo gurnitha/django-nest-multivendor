@@ -133,3 +133,16 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   README.md
         modified:   app/userauth/apps.py
         modified:   config/settings.py
+
+#### 3.3 Create custom class User(AbstractUser): in userauth/models.py
+
+        It will create errors as seen bellow!
+
+        ERRORS:                                                                                                                 
+        auth.User.groups: (fields.E304) Reverse accessor for 'auth.User.groups' clashes with reverse accessor for 'userauth.User
+        .groups'.                                                                                                               
+                HINT: Add or change a related_name argument to the definition for 'auth.User.groups' or 'userauth.User.groups'. 
+
+        modified:   README.md
+        modified:   app/userauth/models.py
+        modified:   config/settings.py
