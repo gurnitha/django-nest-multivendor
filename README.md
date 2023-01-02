@@ -98,16 +98,33 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
 #### 2.3 Protecting project configuration files
 
-        pip install django-decoupl
-        Install python-decouple: pip install django-decouple
-        Create .env file inside the project
-        Adding parameter to .env file
-        Use the parameter in .env file in config/settings.py
-        Add .env in .gitignore file before git commit
-        Configur BASE_DIR in settings.py if found error:
+        1. pip install django-decoupl
+        2. Install python-decouple: pip install django-decouple
+        3. Create .env file inside the project
+        4. Adding parameter to .env file
+        5. Use the parameter in .env file in config/settings.py
+        6. Add .env in .gitignore file before git commit
+        7. Configur BASE_DIR in settings.py if found error:
+        
         # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
         BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))
 
         modified:   README.md
         modified:   config/settings.py
+
+## 3. Custome user model
+
+#### 3.1 Create a new app: app/userauth
+
+        (venv3932) λ mkdir app\userauth
+        (venv3932) λ django-admin startapp userauth app\userauth
+
+        modified:   README.md
+        new file:   app/userauth/__init__.py
+        new file:   app/userauth/admin.py
+        new file:   app/userauth/apps.py
+        new file:   app/userauth/migrations/__init__.py
+        new file:   app/userauth/models.py
+        new file:   app/userauth/tests.py
+        new file:   app/userauth/views.py
 
