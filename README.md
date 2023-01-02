@@ -215,3 +215,10 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   app/userauth/views.py
         modified:   config/urls.py
         new file:   templates/app/userauth/sign-up.html
+
+#### 5.2 Create form class UserRegisterForm (UserCreationForm) in: app/userauth/forms.py and reder its instances to sign-up page
+
+        modified:   README.md
+        new file:   app/userauth/forms.py
+        modified:   app/userauth/views.py
+        modified:   templates/app/userauth/sign-up.html
