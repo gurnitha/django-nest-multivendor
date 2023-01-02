@@ -156,3 +156,8 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         
         modified:   README.md
         modified:   config/settings.py
+
+#### 3.5 Run makemigrations and migrate and runserver
+
+        modified:   README.md
+        new file:   app/userauth/migrations/0001_initial.py
