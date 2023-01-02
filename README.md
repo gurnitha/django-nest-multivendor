@@ -205,3 +205,13 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   config/settings.py
+
+## 5. User register system
+
+#### 5.1 Create register_view method to render sign-up page
+
+        modified:   README.md
+        new file:   app/userauth/urls.py
+        modified:   app/userauth/views.py
+        modified:   config/urls.py
+        new file:   templates/app/userauth/sign-up.html

@@ -9,6 +9,9 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.core.urls')),
+
+    # userauth
+    path('user/', include('app.userauth.urls')),
 ]
 
 if settings.DEBUG:
