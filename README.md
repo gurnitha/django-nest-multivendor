@@ -189,3 +189,14 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 #### 4.1 Install django-jazzmin: pip install -U django-jazzmin
 
         modified:   README.md
+
+#### 4.2 Add jazzmin in config/INSTALLED_APPS and re-run the server
+
+        INSTALLED_APPS = [
+
+            # New
+            'jazzmin',
+        ...
+        
+        modified:   README.md
+        modified:   config/settings.py
