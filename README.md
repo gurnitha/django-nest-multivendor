@@ -95,3 +95,19 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   config/settings.py
+
+#### 2.3 Protecting project configuration files
+
+        pip install django-decoupl
+        Install python-decouple: pip install django-decouple
+        Create .env file inside the project
+        Adding parameter to .env file
+        Use the parameter in .env file in config/settings.py
+        Add .env in .gitignore file before git commit
+        Configur BASE_DIR in settings.py if found error:
+        # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))
+
+        modified:   README.md
+        modified:   config/settings.py
+
