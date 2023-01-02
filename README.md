@@ -197,6 +197,11 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
             # New
             'jazzmin',
         ...
-        
+
+        modified:   README.md
+        modified:   config/settings.py
+
+#### 4.3 Configuring jazzmin for its look in admin panel
+
         modified:   README.md
         modified:   config/settings.py
