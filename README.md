@@ -181,3 +181,11 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
 #### 3.8 Customising user display in admin panel
 
+    modified:   README.md
+    modified:   app/userauth/admin.py
+
+## 4. Setting up admin panel
+
+#### 4.1 Install django-jazzmin: pip install -U django-jazzmin
+
+        modified:   README.md
