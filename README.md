@@ -173,3 +173,8 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         Superuser created successfully.
 
         modified:   README.md
+
+#### 3.7 Register User model to admin.py
+
+        modified:   README.md
+        modified:   app/userauth/admin.py
