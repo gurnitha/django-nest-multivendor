@@ -74,3 +74,9 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         new file:   templates/partials/nav-mobile.html
         new file:   templates/partials/preloader.html
         new file:   templates/partials/quickview.html
+
+## 2. Setting up PostgreSQL database
+
+#### 2.1 Install psycopg2 driver: pip install psycopg2
+
+        modified:   README.md
