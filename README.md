@@ -146,3 +146,13 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   README.md
         modified:   app/userauth/models.py
         modified:   config/settings.py
+
+#### 3.4 Add AUTH_USER_MODEL = 'userauth.User' in config/settings.py
+
+        It will raise warning like this:
+
+        raise ValueError("Dependency on app with no migrations: %s" % key[0])
+        ValueError: Dependency on app with no migrations: userauth
+        
+        modified:   README.md
+        modified:   config/settings.py
