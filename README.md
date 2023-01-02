@@ -178,3 +178,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   app/userauth/admin.py
+
+#### 3.8 Customising user display in admin panel
+
