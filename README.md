@@ -161,3 +161,15 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         new file:   app/userauth/migrations/0001_initial.py
+
+#### 3.6 Create superuser, run server and login to admin
+
+        (venv3932) λ python manage.py createsuperuser
+        Email: x
+        Username: x
+        Password:
+        Password (again):
+        ...
+        Superuser created successfully.
+
+        modified:   README.md
