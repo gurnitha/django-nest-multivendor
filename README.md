@@ -249,3 +249,9 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   templates/app/userauth/register.html
+
+#### 5.7 Configure the register page - add widget in forms.py and use it in the regiter page
+
+        modified:   README.md
+        modified:   app/userauth/forms.py
+        modified:   templates/app/userauth/register.html
