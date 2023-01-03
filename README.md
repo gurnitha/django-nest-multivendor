@@ -228,3 +228,10 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   README.md
         modified:   app/userauth/views.py
         modified:   templates/app/userauth/sign-up.html
+
+#### 5.4 Redirect signed up user to login page
+
+        modified:   README.md
+        modified:   app/userauth/urls.py
+        modified:   app/userauth/views.py
+        new file:   templates/app/userauth/sign-in.html
