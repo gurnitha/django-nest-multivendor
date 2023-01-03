@@ -267,3 +267,18 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   app/userauth/views.py
+
+#### 6.2 Add template to login page and login
+
+
+        modified:   README.md
+        modified:   app/userauth/views.py
+        modified:   templates/app/userauth/login.html
+        modified:   templates/app/userauth/register.html
+
+        NOTE:
+
+        The code bellow, does not work as code in the tutorials.
+        It works, but could not access the login page.
+        For now, I disabled it.
+        And I could logged in successfully.

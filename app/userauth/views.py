@@ -44,33 +44,37 @@ def register_view(request):
 # Login View
 def login_view(request):
 
-	# If the user exist, redirect him to the home page
-	if request.user.is_authenticated:
-		return redirect('core:index')
+	# # If the user exist, redirect him to the home page
+	# if request.user.is_authenticated:
+	# 	messages.warning(request, 'You are already logged in!')
+	# 	return redirect('core:index')
 
-	# If the use is NOT exist, show him the form and catch its email and password
+	# # If the use is NOT exist, show him the form and catch its email and password
 	if request.method == 'POST':
-		emil = request.POST.get('email') # get email from attr name='email' in form input field
+		email = request.POST.get('email') # get email from attr name='email' in form input field
 		password = request.POST.get('password') # get password from attr name='password' in form input field 
 
-	# Use try block to warn user that something is going wrong
-	try:
-		user = User.objects.get(email=email) # email (colerd green, is email from db) and emil (colored white, is from the input field)
-	except:
-		messages.warning(request, f'User with {email} does not exist!')
-		return redirect('userauth:login')
+		# Use try block to warn user that something is going wrong
+		try:
+			user = User.objects.get(email=email) # email (colerd green, is email from db) and emil (colored white, is from the input field)
+		except:
+			# messages.warning(request, f'User with {email} does not exist!')
+			messages.warning(request, f'User with this email does not exist!')
 
-	# Check ff user exist
-	user = authenticate(request, emil=emil, password=password)
-	# If user is known or exist in database
-	if user is not None:
-		# Log him in directly
-		logi(request, user)
-		messages.success(request, 'You are logged in!')
-		return redirect('core:index')
+		# Check if user exist
+		user = authenticate(request, email=email, password=password)
 
-	# If user is NOT known or DOES NOT exist in database
-	else:
-		messages.warning(request, 'User does not exist, create an account.')
+		# If user is known or exist in database
+		if user is not None:
+			# Log him in directly
+			login(request, user)
+			messages.success(request, 'You are logged in!')
+			return redirect('core:index')
 
-	return render(request, 'app/userauth/login.html')
+		# If user is NOT known or DOES NOT exist in database
+		else:
+			messages.warning(request, 'User does not exist, create an account.')
+
+	context = {}
+
+	return render(request, 'app/userauth/login.html', context)
