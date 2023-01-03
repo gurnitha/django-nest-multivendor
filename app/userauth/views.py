@@ -7,11 +7,9 @@ from django.contrib import messages, auth
 from django.shortcuts import redirect
 from django.conf import settings
 
-# Define User
-User = settings.AUTH_USER_MODEL # get user from this: AUTH_USER_MODEL = 'userauth.User'
-
 # Locals
 from app.userauth.forms import UserRegisterForm
+from app.userauth.models import User
 
 # Register View
 def register_view(request):
@@ -57,23 +55,23 @@ def login_view(request):
 		# Use try block to warn user that something is going wrong
 		try:
 			user = User.objects.get(email=email) # email (colerd green, is email from db) and emil (colored white, is from the input field)
+			# Check if user exist
+			user = authenticate(request, email=email, password=password)
+
+			# If user is known or exist in database
+			if user is not None:
+				# Log him in directly
+				login(request, user)
+				messages.success(request, 'You are logged in')
+				return redirect('core:index')
+
+			# If user is NOT known or DOES NOT exist in database
+			else:
+				messages.warning(request, 'User does not exist, create an account.')		
+
 		except:
 			# messages.warning(request, f'User with {email} does not exist!')
-			messages.warning(request, f'User with this email does not exist!')
-
-		# Check if user exist
-		user = authenticate(request, email=email, password=password)
-
-		# If user is known or exist in database
-		if user is not None:
-			# Log him in directly
-			login(request, user)
-			messages.success(request, 'You are logged in!')
-			return redirect('core:index')
-
-		# If user is NOT known or DOES NOT exist in database
-		else:
-			messages.warning(request, 'User does not exist, create an account.')
+			messages.warning(request, f'User with this email does not exist')
 
 	context = {}
 
@@ -83,5 +81,5 @@ def login_view(request):
 # Logout View
 def logout_view(request):
 	logout(request)
-	messages.success(request, 'You are logged out! Login again?')
+	messages.success(request, 'You are logged out. Login again')
 	return redirect('userauth:login')

@@ -305,3 +305,23 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   README.md
         modified:   templates/partials/header.html
 
+## 8. Alerts in Django
+
+#### 8.1 Looping alert messages in the header
+
+        modified:   README.md
+        modified:   app/userauth/views.py
+        modified:   templates/partials/header.html
+
+        NOTE:
+
+        Problem:
+
+        Alert message remains stay or does not disappear.
+        To make it disappear, we have to refresh the browser.
+        But this is not what we want.
+
+        Solution:
+
+        Use jQuery to solve it.
+
