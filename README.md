@@ -260,3 +260,10 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   templates/app/userauth/register.html
+
+## 6. User login system
+
+#### 6.1 Add logic to login_view
+
+        modified:   README.md
+        modified:   app/userauth/views.py
