@@ -244,3 +244,8 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         renamed:    templates/app/userauth/sign-in.html -> templates/app/userauth/login.html
         new file:   templates/app/userauth/register.html
         deleted:    templates/app/userauth/sign-up.html
+
+#### 5.6 Configure the register page - delete form input
+
+        modified:   README.md
+        modified:   templates/app/userauth/register.html
