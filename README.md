@@ -222,3 +222,9 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         new file:   app/userauth/forms.py
         modified:   app/userauth/views.py
         modified:   templates/app/userauth/sign-up.html
+
+#### 5.3 Use UserRegisterForm in register_view method to register a new user
+
+        modified:   README.md
+        modified:   app/userauth/views.py
+        modified:   templates/app/userauth/sign-up.html

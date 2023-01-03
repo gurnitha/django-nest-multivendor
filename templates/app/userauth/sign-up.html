@@ -6,7 +6,10 @@
 	<title>Sign-up</title>
 </head>
 <body>
-	<h1>Sign up</h1>
-	{{ form }}
+	<form action="" method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Register</button>
+	</form>
 </body>
 </html>
