@@ -362,7 +362,12 @@
                         </div>
                     {% endfor %}
                 {% endif %}
-
+                <!-- Load jQuery to close the alert message -->
+                <script>
+                    setTimeout (() => {
+                        $(".alert").alert("close");
+                    }, 3000)
+                </script>
             </div>
         </div>
     </header>

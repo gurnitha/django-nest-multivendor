@@ -325,3 +325,13 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         Use jQuery to solve it.
 
+#### 8.2 Use jQuery to make alert disappear automatically in some seconds
+
+        modified:   README.md
+        modified:   templates/base.html
+        modified:   templates/partials/header.html
+
+        NOTE:
+
+        Add jQery CDN and Ajax in the header.
+        It works.
