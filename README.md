@@ -282,3 +282,20 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         It works, but could not access the login page.
         For now, I disabled it.
         And I could logged in successfully.
+
+## 7. User logout system
+
+#### 7.1 Logout a user
+
+        modified:   app/userauth/urls.py
+        modified:   app/userauth/views.py
+        modified:   templates/app/userauth/login.html
+        modified:   templates/partials/header.html
+
+        NOTE:
+
+        1. Logout user
+        2. Add some links
+        3. User logged out, but the menu still showing log-out menu
+
+        Next: hiding log-out menu if user logged in.
