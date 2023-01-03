@@ -23,7 +23,7 @@ def register_view(request):
 				username=form.cleaned_data['email'],
 				password=form.cleaned_data['password1'])
 			login(request, new_user)
-			return redirect('userauth:sign_in')
+			return redirect('userauth:login')
 
 	else: 
 		form = UserRegisterForm()
@@ -34,9 +34,9 @@ def register_view(request):
 	}
 
 	# Render context to sign-up template
-	return render(request, 'app/userauth/sign-up.html', context)
+	return render(request, 'app/userauth/register.html', context)
 
 
 # Login View
 def login_view(request):
-	return render(request, 'app/userauth/sign-in.html')
+	return render(request, 'app/userauth/login.html')

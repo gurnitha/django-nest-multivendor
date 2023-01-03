@@ -235,3 +235,12 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   app/userauth/urls.py
         modified:   app/userauth/views.py
         new file:   templates/app/userauth/sign-in.html
+
+#### 5.5 Add template to register page and renamed sign-up and sign-in files
+
+        modified:   README.md
+        modified:   app/userauth/urls.py
+        modified:   app/userauth/views.py
+        renamed:    templates/app/userauth/sign-in.html -> templates/app/userauth/login.html
+        new file:   templates/app/userauth/register.html
+        deleted:    templates/app/userauth/sign-up.html
