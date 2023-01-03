@@ -299,3 +299,9 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         3. User logged out, but the menu still showing log-out menu
 
         Next: hiding log-out menu if user logged in.
+
+#### 7.2 Hiding logout and login menu in header
+
+        modified:   README.md
+        modified:   templates/partials/header.html
+
