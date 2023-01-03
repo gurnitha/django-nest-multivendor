@@ -22,6 +22,14 @@
                             <div class="col-lg-6 col-md-8">
                                 <div class="login_wrap widget-taber-content background-white">
                                     <div class="padding_eight_all bg-white">
+
+                                    	<!-- Error messages -->
+                                    	{% if form.errors %}
+                                    	<div class="alert alert-danger">
+                                    		<strong>{{form.errors}}</strong>
+                                    	</div>
+                                    	{% endif %}
+
                                         <div class="heading_s1">
                                             <h1 class="mb-5">Create an Account</h1>
                                             <p class="mb-30">Already have an account? <a href="page-login.html">Login</a></p>
