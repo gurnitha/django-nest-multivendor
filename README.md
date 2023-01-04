@@ -353,3 +353,9 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         NOTE:
 
         max_digits = 99999999999999 does not work in postgresql
+
+#### 9.2 Modify Product model
+
+        modified:   app/core/admin.py
+        new file:   app/core/migrations/0010_auto_20230104_0821.py
+        modified:   app/core/models.py

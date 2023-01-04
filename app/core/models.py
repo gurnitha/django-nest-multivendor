@@ -88,43 +88,43 @@ class Product(models.Model):
 		('published', 'Published'),
 	) 
 
-	prod_id = ShortUUIDField(
+	pid = ShortUUIDField(
 					unique=True, length=10, max_length=20,
 					prefix='prod', alphabet='abcdefgh12345')
-	prod_user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-	prod_category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
-	prod_title = models.CharField(max_length=100, default='Fresh pear')
-	prod_image = models.ImageField(upload_to='user_directory_path', default='product.jpg')
-	prod_description = models.TextField(null=True, blank=True, default='This is the product')
+	user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+	category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+	title = models.CharField(max_length=100, default='Fresh pear')
+	image = models.ImageField(upload_to='user_directory_path', default='product.jpg')
+	description = models.TextField(null=True, blank=True, default='This is the product')
 
-	prod_new_price = models.DecimalField(max_digits=100, decimal_places=2, default='1.99')
-	prod_old_price = models.DecimalField(max_digits=100, decimal_places=2, default='2.99')
+	new_price = models.DecimalField(max_digits=100, decimal_places=2, default='1.99')
+	old_price = models.DecimalField(max_digits=100, decimal_places=2, default='2.99')
 
-	pro_specifications = models.TextField(null=True, blank=True)
-	prod_tag = models.ForeignKey(Tag, on_delete=models.SET_NULL, null=True)
+	specifications = models.TextField(null=True, blank=True)
+	tag = models.ForeignKey(Tag, on_delete=models.SET_NULL, null=True)
 
 	pro_status_choice = models.CharField(choices=PRODUCT_STATUS_CHOICES, max_length=10, default='in_review')
 
-	prod_status = models.BooleanField(default=True)
-	prod_in_stock = models.BooleanField(default=True)
-	prod_featured = models.BooleanField(default=False)
-	prod_digital = models.BooleanField(default=False)
+	status = models.BooleanField(default=True)
+	in_stock = models.BooleanField(default=True)
+	featured = models.BooleanField(default=False)
+	digital = models.BooleanField(default=False)
 
-	prod_sku = ShortUUIDField(unique=True, length=4, max_length=10, prefix='sku', alphabet='1234567890')
+	sku = ShortUUIDField(unique=True, length=4, max_length=10, prefix='sku', alphabet='1234567890')
 
-	prod_created = models.DateTimeField(auto_now_add=True)
-	prod_updated = models.DateTimeField(null=True, blank=True)
+	created = models.DateTimeField(auto_now_add=True)
+	updated = models.DateTimeField(null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Products'
 
 	def product_image(self):
-		# Concatinate src="%s" and (self.prod_image.url)
-		# s in "%s" = src, src = self.prod_image.url
-		return mark_safe('<img src="%s" width="50" height="50" />' %(self.prod_image.url))
+		# Concatinate src="%s" and (self.image.url)
+		# s in "%s" = src, src = self.image.url
+		return mark_safe('<img src="%s" width="50" height="50" />' %(self.image.url))
 
 	def __str__(self):
-		return self.prod_title 
+		return self.title 
 
 	# Define discounted price
 	def get_procentage(self):
