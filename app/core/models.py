@@ -244,9 +244,9 @@ class Wishlist(models.Model):
 
 # Model: Address
 class Address(models.Model):
-	addr_user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-	addr_address = models.CharField(max_length=100, null=True)
-	addr_status = models.BooleanField(default=False)
+	user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+	address = models.CharField(max_length=100, null=True)
+	status = models.BooleanField(default=False)
 
 	class Meta:
 		verbose_name_plural = 'Addresses'
