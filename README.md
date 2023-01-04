@@ -410,3 +410,10 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   app/core/admin.py
         new file:   app/core/migrations/0018_auto_20230104_0901.py
         modified:   app/core/models.py
+
+#### 9.11 Modify Product model by adding vendor field
+
+        modified:   README.md
+        new file:   app/core/migrations/0019_product_vendor.py
+        modified:   app/core/models.py
+
