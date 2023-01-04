@@ -221,7 +221,7 @@ class ProductReview(models.Model):
 		return mark_safe('<img src="%s" width="50" height="50" />' %(self.prod_image.url))
 
 	def __str__(self):
-		return self.product.prod_title 
+		return self.product.title 
 
 
 	def get_rating(self):
@@ -231,15 +231,15 @@ class ProductReview(models.Model):
 
 # Model: Wishlist
 class Wishlist(models.Model):
-	wish_user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-	wish_product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
-	wish_created = models.DateTimeField(auto_now_add=True)
+	user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+	product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+	created = models.DateTimeField(auto_now_add=True)
 
 	class Meta:
 		verbose_name_plural = 'Wishlist'
 
 	def __str__(self):
-		return self.wish_product.prod_title 
+		return self.product.title 
 
 
 # Model: Address

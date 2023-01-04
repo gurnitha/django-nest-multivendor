@@ -398,3 +398,9 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         NOTE:
 
         Modified image field in the Product model: form image to prod_image
+
+#### 9.9 Modify Wishlist model
+
+        modified:   app/core/admin.py
+        new file:   app/core/migrations/0017_auto_20230104_0859.py
+        modified:   app/core/models.py

@@ -47,8 +47,7 @@ class ProductReviewAdmin(admin.ModelAdmin):
 
 
 class WishlistAdmin(admin.ModelAdmin):
-	list_display = ['wish_user', 'wish_product',
-			'wish_created']
+	list_display = ['user', 'product', 'created']
 
 
 class AddressAdmin(admin.ModelAdmin):
