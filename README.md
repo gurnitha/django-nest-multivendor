@@ -335,3 +335,21 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         Add jQery CDN and Ajax in the header.
         It works.
+
+#### 9.1 Create django model, migrations, and admin
+
+        modified:   app/core/admin.py
+        new file:   app/core/migrations/0001_initial.py
+        new file:   app/core/migrations/0002_vendor.py
+        new file:   app/core/migrations/0003_product_tag.py
+        new file:   app/core/migrations/0004_productimage.py
+        new file:   app/core/migrations/0005_cartorder.py
+        new file:   app/core/migrations/0006_cartorderitem.py
+        new file:   app/core/migrations/0007_productreview.py
+        new file:   app/core/migrations/0008_wishlist.py
+        new file:   app/core/migrations/0009_address.py
+        modified:   app/core/models.py
+
+        NOTE:
+
+        max_digits = 99999999999999 does not work in postgresql
