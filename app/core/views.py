@@ -9,7 +9,8 @@ from app.core.models import Product
 # Create your views here.
 
 def index(request):
-	products = Product.objects.all().order_by('-id')
+	# products = Product.objects.all().order_by('-id')
+	products = Product.objects.filter(status_choice='published', featured=True)
 	# print(products)
 	context = {
 		'products':products,

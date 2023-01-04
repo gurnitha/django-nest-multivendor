@@ -434,4 +434,11 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         NOTE:
 
-        Some modifies were made in the Product model and admin, as well in the template                                 
+        Some modifies were made in the Product model and admin, as well in the template    
+
+#### 10.2 Display all products to homepage with filter
+
+        products = Product.objects.filter(status_choice='published', featured=True)
+
+        modified:   README.md
+        modified:   app/core/views.py
