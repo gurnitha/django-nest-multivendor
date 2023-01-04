@@ -22,22 +22,22 @@ def user_directory_path(instance, filename):
 
 # Model: Category
 class Category(models.Model):
-	cat_id = ShortUUIDField(
+	cid = ShortUUIDField(
 					unique=True, length=10, max_length=20,
 					prefix='cat', alphabet='abcdefgh12345')
-	cat_title = models.CharField(max_length=100, default='Food')
-	cat_image = models.ImageField(upload_to='category', default='category.jpg')
+	title = models.CharField(max_length=100, default='Food')
+	image = models.ImageField(upload_to='category', default='category.jpg')
 
 	class Meta:
 		verbose_name_plural = 'Categories'
 
 	def category_image(self):
-		# Concatinate src="%s" and (self.cat_image.url)
-		# s in "%s" = src, src = self.cat_image.url
-		return mark_safe('<img src="%s" width="50" height="50" />' %(self.cat_image.url))
+		# Concatinate src="%s" and (self.image.url)
+		# s in "%s" = src, src = self.image.url
+		return mark_safe('<img src="%s" width="50" height="50" />' %(self.image.url))
 
 	def __str__(self):
-		return self.cat_title 
+		return self.title 
 
 
 # Model: Tag
