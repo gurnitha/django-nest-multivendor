@@ -417,3 +417,21 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         new file:   app/core/migrations/0019_product_vendor.py
         modified:   app/core/models.py
 
+## 10. Product list view
+
+#### 10.1 Display all products to homepage without filter
+
+        modified:   README.md                                            
+        modified:   app/core/admin.py                                    
+        new file:   app/core/migrations/0020_auto_20230104_2253.py       
+        new file:   app/core/migrations/0021_rename_pro_status_choice_pro
+        modified:   app/core/models.py                                   
+        modified:   app/core/views.py                                    
+        new file:   media/category/product-1-1.jpg                       
+        ...    
+        modified:   templates/app/core/index.html                        
+        modified:   templates/base.html 
+
+        NOTE:
+
+        Some modifies were made in the Product model and admin, as well in the template                                 
