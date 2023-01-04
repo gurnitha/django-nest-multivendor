@@ -94,7 +94,7 @@ class Product(models.Model):
 	user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 	category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
 	title = models.CharField(max_length=100, default='Fresh pear')
-	image = models.ImageField(upload_to='user_directory_path', default='product.jpg')
+	prod_image = models.ImageField(upload_to='user_directory_path', default='product.jpg')
 	description = models.TextField(null=True, blank=True, default='This is the product')
 
 	new_price = models.DecimalField(max_digits=100, decimal_places=2, default='1.99')
@@ -206,11 +206,11 @@ class ProductReview(models.Model):
 		(5, '★★★★'),
 	)
 
-	prodrev_user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-	prodrev_product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
-	prodrev_review = models.TextField()
-	prodrev_rating = models.ImageField(choices=PRODUCT_RATING_CHOICES, default=None)
-	prodrev_created = models.DateTimeField(auto_now_add=True)
+	user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+	product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+	review = models.TextField()
+	rating = models.ImageField(choices=PRODUCT_RATING_CHOICES, default=None)
+	created = models.DateTimeField(auto_now_add=True)
 
 	class Meta:
 		verbose_name_plural = 'Product reviews'
@@ -221,11 +221,11 @@ class ProductReview(models.Model):
 		return mark_safe('<img src="%s" width="50" height="50" />' %(self.prod_image.url))
 
 	def __str__(self):
-		return self.prodrev_product.prod_title 
+		return self.product.prod_title 
 
 
 	def get_rating(self):
-		return self.prodrev_rating
+		return self.rating
 
 
 
