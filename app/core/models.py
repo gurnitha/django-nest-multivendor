@@ -135,10 +135,10 @@ class Product(models.Model):
 
 # Model: Product Image
 class ProductImage(models.Model):
-	prodim_image = models.ImageField(upload_to='product-images', default='product.jpg')
-	prodim_product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
-	prodim_created = models.DateTimeField(auto_now_add=True)
-	prodim_updated = models.DateTimeField(null=True, blank=True)
+	image = models.ImageField(upload_to='product-images', default='product.jpg')
+	product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+	created = models.DateTimeField(auto_now_add=True)
+	updated = models.DateTimeField(null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = 'Product images'
