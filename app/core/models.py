@@ -171,22 +171,22 @@ class CartOrder(models.Model):
 
 # Model: Cart Order Item
 class CartOrderItem(models.Model):
-	cartoritem_order = models.ForeignKey(CartOrder, on_delete=models.CASCADE)
-	cartoritem_invoice_number = models.CharField(max_length=200)
-	cartoritem_status = models.CharField(max_length=200)
-	cartoritem_item = models.CharField(max_length=200)
-	cartoritem_image = models.CharField(max_length=200)
-	cartoritem_quantity = models.ImageField(default=0)
-	cartoritem_price = models.DecimalField(max_digits=100, decimal_places=2, default='1.99')	
-	cartoritem_total_price = models.DecimalField(max_digits=100, decimal_places=2, default='1.99')
+	order = models.ForeignKey(CartOrder, on_delete=models.CASCADE)
+	invoice_number = models.CharField(max_length=200)
+	status = models.CharField(max_length=200)
+	item = models.CharField(max_length=200)
+	image = models.CharField(max_length=200)
+	quantity = models.ImageField(default=0)
+	price = models.DecimalField(max_digits=100, decimal_places=2, default='1.99')	
+	total_price = models.DecimalField(max_digits=100, decimal_places=2, default='1.99')
 
 	class Meta:
 		verbose_name_plural = 'Cart order items'	
 
 	def cart_order_item_image(self):
-		# Concatinate src="%s" and (self.cartoritem_image.url)
-		# s in "%s" = src, src = self.cartoritem_image.url
-		return mark_safe('<img src="/media/%s" width="50" height="50" />' %(self.cartoritem_image))
+		# Concatinate src="%s" and (self.image.url)
+		# s in "%s" = src, src = self.image.url
+		return mark_safe('<img src="/media/%s" width="50" height="50" />' %(self.image))
 
 
 

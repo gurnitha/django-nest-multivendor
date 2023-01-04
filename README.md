@@ -382,3 +382,9 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   app/core/admin.py
         new file:   app/core/migrations/0014_auto_20230104_0834.py
         modified:   app/core/models.py
+
+#### 9.7 Modify CartOrderItem model
+
+        modified:   app/core/admin.py
+        new file:   app/core/migrations/0015_auto_20230104_0836.py
+        modified:   app/core/models.py
