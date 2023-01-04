@@ -365,3 +365,9 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   app/core/admin.py
         new file:   app/core/migrations/0011_auto_20230104_0827.py
         modified:   app/core/models.py
+
+#### 9.4 Modify Vendor model
+
+        modified:   app/core/admin.py
+        new file:   app/core/migrations/0012_auto_20230104_0829.py
+        modified:   app/core/models.py

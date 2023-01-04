@@ -48,31 +48,31 @@ class Tag(models.Model):
 
 # Model: Vendor
 class Vendor(models.Model):
-	ven_id = ShortUUIDField(
+	vid = ShortUUIDField(
 					unique=True, length=10, max_length=20,
 					prefix='ven', alphabet='abcdefgh12345')
-	ven_title = models.CharField(max_length=100, default='Nestify')
-	ven_image = models.ImageField(upload_to='user_directory_path', default='vendor.jpg')
-	ven_description = models.TextField(null=True, blank=True, default='I am a great vendor')
-	ven_address = models.CharField(max_length=100, default='123 Main Street')
-	ven_contact = models.CharField(max_length=100, default='+123 (456) 789')
-	ven_chat_response_time = models.CharField(max_length=100, default='100')
-	ven_shipping_on_time = models.CharField(max_length=100, default='100')
-	ven_authentic_rating = models.CharField(max_length=100, default='100')
-	ven_days_return = models.CharField(max_length=100, default='100')
-	ven_warranty_period = models.CharField(max_length=100, default='100')
-	ven_user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+	title = models.CharField(max_length=100, default='Nestify')
+	image = models.ImageField(upload_to='user_directory_path', default='vendor.jpg')
+	description = models.TextField(null=True, blank=True, default='I am a great vendor')
+	address = models.CharField(max_length=100, default='123 Main Street')
+	contact = models.CharField(max_length=100, default='+123 (456) 789')
+	chat_response_time = models.CharField(max_length=100, default='100')
+	shipping_on_time = models.CharField(max_length=100, default='100')
+	authentic_rating = models.CharField(max_length=100, default='100')
+	days_return = models.CharField(max_length=100, default='100')
+	warranty_period = models.CharField(max_length=100, default='100')
+	user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
 	class Meta:
 		verbose_name_plural = 'Vendors'
 
 	def vendor_image(self):
-		# Concatinate src="%s" and (self.ven_image.url)
-		# s in "%s" = src, src = self.ven_image.url
-		return mark_safe('<img src="%s" width="50" height="50" />' %(self.ven_image.url))
+		# Concatinate src="%s" and (self.image.url)
+		# s in "%s" = src, src = self.image.url
+		return mark_safe('<img src="%s" width="50" height="50" />' %(self.image.url))
 
 	def __str__(self):
-		return self.ven_title 
+		return self.title 
 
 
 
