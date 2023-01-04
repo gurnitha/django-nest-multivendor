@@ -29,9 +29,9 @@ class VendorAdmin(admin.ModelAdmin):
 
 
 class CartOrderAdmin(admin.ModelAdmin):
-	list_display = ['cartor_user', 'cartor_price', 
-			'cartor_paid_status', 'cartor_date', 
-			'cartor_process_status' ]
+	list_display = ['user', 'price', 
+			'paid_status', 'date', 
+			'process_status' ]
 
 
 class CartOrderItemAdmin(admin.ModelAdmin):

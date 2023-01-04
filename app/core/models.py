@@ -159,11 +159,11 @@ class CartOrder(models.Model):
 		('delivered', 'Delivered'),
 	) 
 
-	cartor_user = models.ForeignKey(User, on_delete=models.CASCADE)
-	cartor_price = models.DecimalField(max_digits=100, decimal_places=2, default='1.99')
-	cartor_paid_status = models.BooleanField(default=False)
-	cartor_date = models.DateTimeField(auto_now_add=True)
-	cartor_process_status = models.CharField(choices=PRODUCT_PROCESS_STATUS_CHOICES, max_length=30, default='Processing') 
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
+	price = models.DecimalField(max_digits=100, decimal_places=2, default='1.99')
+	paid_status = models.BooleanField(default=False)
+	date = models.DateTimeField(auto_now_add=True)
+	process_status = models.CharField(choices=PRODUCT_PROCESS_STATUS_CHOICES, max_length=30, default='Processing') 
 
 	class Meta:
 		verbose_name_plural = 'Cart orders'	
