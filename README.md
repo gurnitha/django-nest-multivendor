@@ -534,3 +534,9 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   README.md
         modified:   templates/app/core/product_by_category_list.html
 
+#### 13.4 Create product belong to a category - dispaly all products belong to a category
+
+        modified:   README.md
+        modified:   app/core/views.py
+        modified:   templates/app/core/category_list.html
+        modified:   templates/app/core/product_by_category_list.html

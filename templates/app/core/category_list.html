@@ -94,7 +94,7 @@
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
+                                        <a href="{% url 'core:product_by_category_list_view' category.cid %}">
                                             <img class="default-img" src="{{category.image.url}}" alt="" />
                                             <img class="hover-img" src="{{category.image.url}}" alt="" />
                                         </a>
@@ -112,7 +112,7 @@
                                     <!-- <div class="product-category">
                                         <a href="shop-grid-right.html">{{category.}}</a>
                                     </div> -->
-                                    <h2 style="margin-left: 50px; !important"><a href="shop-product-right.html">{{category.title}}</a></h2>
+                                    <h2 style="margin-left: 50px; !important"><a href="{% url 'core:product_by_category_list_view' category.cid %}">{{category.title}}</a></h2>
                                     <p style="margin-left: 50px; !important"><a href="shop-product-right.html">{{category.category.count}} product{{category.category.count|pluralize}}</a></p>
                                     <!-- <div class="product-rate-cover">
                                         <div class="product-rate d-inline-block">
