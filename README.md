@@ -528,3 +528,9 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   app/core/views.py
         deleted:    templates/app/core/product_belong_to_a_category_list.html
         new file:   templates/app/core/product_by_category_list.html
+
+#### 13.3 Create product belong to a category - load static files
+
+        modified:   README.md
+        modified:   templates/app/core/product_by_category_list.html
+
