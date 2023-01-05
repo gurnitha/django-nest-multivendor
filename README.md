@@ -463,3 +463,8 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   templates/app/core/product_list.html
+
+#### 11.4 Create products list page - add logic to view and loop products to products-list
+
+        modified:   app/core/views.py
+        modified:   templates/app/core/product_list.html
