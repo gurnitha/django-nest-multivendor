@@ -458,3 +458,8 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   app/core/urls.py
         modified:   app/core/views.py
         new file:   templates/app/core/product_list.html
+
+#### 11.3 Create products list page - loading static files
+
+        modified:   README.md
+        modified:   templates/app/core/product_list.html
