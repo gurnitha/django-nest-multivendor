@@ -442,3 +442,19 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   app/core/views.py
+
+## 11. Products list
+
+#### 11.1 Create products list page - urls, views, templates
+
+        modified:   README.md
+        modified:   app/core/urls.py
+        modified:   app/core/views.py
+        new file:   templates/app/core/product_list_view.html
+
+#### 11.2 Create products list page - add template
+
+        modified:   README.md
+        modified:   app/core/urls.py
+        modified:   app/core/views.py
+        new file:   templates/app/core/product_list.html
