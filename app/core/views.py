@@ -26,4 +26,7 @@ def product_list_view(request):
 
 
 def category_list_view(request):
-	return render(request, 'app/core/category_list.html')
+	categories = Category.objects.all()
+	# print(categories)
+	context = {'categories':categories}
+	return render(request, 'app/core/category_list.html', context)
