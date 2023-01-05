@@ -512,3 +512,11 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   templates/app/core/category_list.html
+
+## 13. Product-based Category List View
+
+#### 13.1 Create product belong to a category - urls, view, templates
+
+        modified:   app/core/urls.py
+        modified:   app/core/views.py
+        new file:   templates/app/core/product_belong_to_a_category_list.html

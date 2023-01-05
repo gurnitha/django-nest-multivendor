@@ -30,3 +30,8 @@ def category_list_view(request):
 	# print(categories)
 	context = {'categories':categories}
 	return render(request, 'app/core/category_list.html', context)
+
+def product_belong_to_a_category_list_view(request, cat_id):
+	return render(request, 'app/core/product_belong_to_a_category_list.html')
+
+
