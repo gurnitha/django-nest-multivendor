@@ -507,3 +507,8 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         new file:   app/core/migrations/0022_alter_product_category.py
         modified:   app/core/models.py
         modified:   templates/app/core/category_list.html
+
+#### 12.7 Create category-list page - Showing all products belong to a category in the sidebar
+
+        modified:   README.md
+        modified:   templates/app/core/category_list.html
