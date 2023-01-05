@@ -488,3 +488,8 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   templates/app/core/category_list.html
+
+#### 12.4 Create category-list page - Modify the template
+
+        modified:   README.md
+        modified:   templates/app/core/category_list.html
