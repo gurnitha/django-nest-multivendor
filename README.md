@@ -468,3 +468,12 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   app/core/views.py
         modified:   templates/app/core/product_list.html
+
+## 12. Category
+
+#### 12.1 Create category-list page - urls, views, templates
+
+        modified:   README.md
+        modified:   app/core/urls.py
+        modified:   app/core/views.py
+        new file:   templates/app/core/category_list.html

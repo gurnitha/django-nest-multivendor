@@ -23,3 +23,7 @@ def product_list_view(request):
 	# print(products)
 	context = {'products':products}
 	return render(request, 'app/core/product_list.html', context)
+
+
+def category_list_view(request):
+	return render(request, 'app/core/category_list.html')
