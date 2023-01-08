@@ -14,6 +14,16 @@
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
+                                <a href="shop-grid-right.html">Category</a>
+                                <ul class="dropdown">
+                                    {% for cat_key in cat_keys %}
+                                    <li><a href="{% url 'core:product_by_category_list_view' cat_key.cid %}">{{ cat_key.title }}</a></li>
+                                    {% endfor %}
+                                    <hr>
+                                    <li><a href="{% url 'core:category_list_view' %}">All categories</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
                                 <a href="shop-grid-right.html">shop</a>
                                 <ul class="dropdown">
                                     <li><a href="shop-grid-right.html">Shop Grid – Right Sidebar</a></li>

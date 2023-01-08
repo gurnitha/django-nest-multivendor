@@ -569,12 +569,27 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         6. Testing: refresh the browser
         7. Restult: ok
 
-#### 14.2 Load all categories page and product by category page
+#### 14.2 Load all categories page and product by category page in nav-bar
 
         Activities:
 
         1. Add links to nav-bar for product by category page
         2. Add links to nav-bar for all categories page
+        3. Testing: refresh the page and click the menu
+        4. Result: ok
+
+        modified:   README.md
+        modified:   templates/partials/nav-bar.html
+
+#### 14.3 Load all categories page and product by category page in nav-mobile
+
+        modified:   README.md
+        modified:   templates/partials/nav-mobile.html
+
+        Activities:
+
+        1. Add links to nav-mobile for product by category page
+        2. Add links to nav-mobile for all categories page
         3. Testing: refresh the page and click the menu
         4. Result: ok
 
