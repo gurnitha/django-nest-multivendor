@@ -22,19 +22,10 @@
                                 <div class="more_slide_open" style="display: none">
                                     <div class="d-flex categori-dropdown-inner">
                                         <ul>
-                                        	{% for cat_key3 in cat_keys3 %}
-                                            <li>
-                                                <a href="{% url 'core:product_by_category_list_view' cat_key3.cid %}"> <img src="{{ cat_key3.image.url }}" alt="" />{{ cat_key3.title }}</a>
-                                            </li>
-                                            {% endfor %}
+
                                         </ul>
                                         <ul class="end">
-                                        	{% for cat_key4 in cat_keys4 %}
-                                            <li>
-                                                <a href="{% url 'core:product_by_category_list_view' cat_key4.cid %}"> <img src="{{ cat_key4.image.url }}" alt="" />{{ cat_key4.title }}</a>
-                                            </li>
-                                            {% endfor %}
-                                            <hr>
+
                                             <li><a href="{% url 'core:category_list_view' %}">All categories</a></li>
                                         </ul>
                                     </div>

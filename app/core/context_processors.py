@@ -4,8 +4,9 @@
 from app.core.models import Category
 
 def default(request):
-	cat_values = Category.objects.all()[0:2]
-	cat_values2 = Category.objects.all()[2:4]
+	categories = Category.objects.all()
+	cat_values = Category.objects.all()[0:5]
+	cat_values2 = Category.objects.all()[5:10]
 	cat_values3 = Category.objects.all()[4:6]
 	cat_values4 = Category.objects.all()[6:7]
 	print(cat_values)
@@ -13,6 +14,7 @@ def default(request):
 	print(cat_values3)
 	print(cat_values4)
 	return {
+		'categories': categories,
 		'cat_keys': cat_values,
 		'cat_keys2': cat_values2,
 		'cat_keys3': cat_values3,

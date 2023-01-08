@@ -641,3 +641,14 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         Activities:
 
         1. Add link to breadcrum of menu category 
+
+#### 14.7 Add links to menu-related categories
+
+        modified:   app/core/context_processors.py
+        new file:   media/category/thumbnail-3.jpg
+        new file:   media/category/thumbnail-4.jpg
+        new file:   media/user_directory_path/product-13-2.jpg
+        new file:   media/user_directory_path/thumbnail-3.jpg
+        modified:   templates/app/core/index.html
+        modified:   templates/partials/nav-bar.html
+        modified:   templates/partials/nav-brows-all-categories.html

@@ -17,8 +17,8 @@
                                     <li>
                                         <a href="shop-grid-right.html">Category <i class="fi-rs-angle-down"></i></a>
                                         <ul class="sub-menu">
-                                            {% for cat_key in cat_keys %}
-                                            <li><a href="{% url 'core:product_by_category_list_view' cat_key.cid %}">{{ cat_key.title }}</a></li>
+                                            {% for category in categories %}
+                                            <li><a href="{% url 'core:product_by_category_list_view' category.cid %}">{{ category.title }}</a></li>
                                             {% endfor %}
                                             <hr>
                                             <li><a href="{% url 'core:category_list_view' %}">All categories</a></li>

@@ -3418,20 +3418,13 @@
                     <div class="sidebar-widget widget-category-2 mb-30">
                         <h5 class="section-title style-1 mb-30">Category</h5>
                         <ul>
+                            {% for category in categories %}
                             <li>
-                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-1.svg' %}" alt="" />Milks & Dairies</a><span class="count">30</span>
+                                <a href="{% url 'core:product_by_category_list_view' category.cid %}"> <img src="{{ category.image.url }}" alt="" />{{ category.title }}</a><span class="count">{{ category.category.count }}</span>
                             </li>
+                            {% endfor %}
                             <li>
-                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-2.svg' %}" alt="" />Clothing</a><span class="count">35</span>
-                            </li>
-                            <li>
-                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-3.svg' %}" alt="" />Pet Foods </a><span class="count">42</span>
-                            </li>
-                            <li>
-                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-4.svg' %}" alt="" />Baking material</a><span class="count">68</span>
-                            </li>
-                            <li>
-                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/category-5.svg' %}" alt="" />Fresh Fruit</a><span class="count">87</span>
+                                <a href="{% url 'core:category_list_view' %}">All categories</a>
                             </li>
                         </ul>
                     </div>
@@ -3546,7 +3539,7 @@
                 <div class="section-title">
                     <div class="title">
                         <h3>Shop by Categories</h3>
-                        <a class="show-all" href="shop-grid-right.html">
+                        <a class="show-all" href="{% url 'core:category_list_view' %}">
                             All Categories
                             <i class="fi-rs-angle-right"></i>
                         </a>
@@ -3555,91 +3548,16 @@
                 </div>
                 <div class="carausel-8-columns-cover position-relative">
                     <div class="carausel-8-columns" id="carausel-8-columns">
+                        {% for cat in categories %}
                         <div class="card-1">
                             <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-1.svg' %}" alt="" /></a>
+                                <a href="{% url 'core:product_by_category_list_view' cat.cid %}"><img src="{{ cat.image.url }}" alt="" /></a>
                             </figure>
                             <h6>
-                                <a href="shop-grid-right.html">Milks and <br />Dairies</a>
+                                <a href="{% url 'core:product_by_category_list_view' cat.cid %}">{{ cat.title }}</a>
                             </h6>
                         </div>
-                        <div class="card-1">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-2.svg' %}" alt="" /></a>
-                            </figure>
-                            <h6>
-                                <a href="shop-grid-right.html">Wines & <br />
-                                    Alcohol</a>
-                            </h6>
-                        </div>
-                        <div class="card-1">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-3.svg' %}" alt="" /></a>
-                            </figure>
-                            <h6>
-                                <a href="shop-grid-right.html">Clothing & <br />Beauty</a>
-                            </h6>
-                        </div>
-                        <div class="card-1">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-4.svg' %}" alt="" /></a>
-                            </figure>
-                            <h6>
-                                <a href="shop-grid-right.html">Pet Foods <br />& Toy</a>
-                            </h6>
-                        </div>
-                        <div class="card-1">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-5.svg' %}" alt="" /></a>
-                            </figure>
-                            <h6>
-                                <a href="shop-grid-right.html">Packaged <br />fast food</a>
-                            </h6>
-                        </div>
-                        <div class="card-1">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-6.svg' %}" alt="" /></a>
-                            </figure>
-                            <h6>
-                                <a href="shop-grid-right.html">Baking <br />material</a>
-                            </h6>
-                        </div>
-                        <div class="card-1">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-7.svg' %}" alt="" /></a>
-                            </figure>
-                            <h6>
-                                <a href="shop-grid-right.html">Vegetables <br />& tubers</a>
-                            </h6>
-                        </div>
-                        <div class="card-1">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-8.svg' %}" alt="" /></a>
-                            </figure>
-                            <h6>
-                                <a href="shop-grid-right.html">Fresh <br />Seafood</a>
-                            </h6>
-                        </div>
-                        <div class="card-1">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-9.svg' %}" alt="" /></a>
-                            </figure>
-                            <h6>
-                                <a href="shop-grid-right.html">Noodles <br />Rice</a>
-                            </h6>
-                        </div>
-                        <div class="card-1">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-10.svg' %}" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Fastfood</a></h6>
-                        </div>
-                        <div class="card-1">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="{% static 'assets/imgs/theme/icons/category-11.svg' %}" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Ice cream</a></h6>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
