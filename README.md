@@ -336,6 +336,11 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         Add jQery CDN and Ajax in the header.
         It works.
 
+        
+
+## 9. Django model: Product, Category, Vendor, ProductImage, CartOrder, Wishlist
+
+
 #### 9.1 Create django model, migrations, and admin
 
         modified:   app/core/admin.py
@@ -540,3 +545,26 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   app/core/views.py
         modified:   templates/app/core/category_list.html
         modified:   templates/app/core/product_by_category_list.html
+
+
+## 14. Django Context Processors (video 18)
+
+#### 14.1 Load category in nav-bar using context_processors
+
+        modified:   README.md
+        new file:   app/core/context_processors.py
+        modified:   config/settings.py
+        modified:   templates/partials/nav-bar.html
+
+        Activities:
+
+        1. Create a new file: app/core/context_processors.py
+        2. Within this file, do these:
+                -imort Category model
+                -create defualt() method 
+                -retrieve categories from db
+        3. Register this default() method in settings.py
+        4. Create category menu in nav-bar
+        5. Load (loop) categories in nav-bar
+        6. Testing: refresh the browser
+        7. Restult: ok
