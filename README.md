@@ -629,3 +629,15 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         The display in menu Brows All Category is not so neat, due to the menu lengths
         are not the same.
+
+#### 14.6 Add links to some category menu
+
+        modified:   README.md
+        modified:   templates/app/core/category_list.html
+        modified:   templates/app/core/product_by_category_list.html
+        modified:   templates/app/core/product_list.html
+        modified:   templates/partials/header.html
+
+        Activities:
+
+        1. Add link to breadcrum of menu category 
