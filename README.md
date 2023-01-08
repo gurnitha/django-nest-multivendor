@@ -595,3 +595,21 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   templates/partials/nav-bar.html
+
+#### 14.4 Load all categories page and product by category page in nav-brows-all-categories
+
+        modified:   README.md
+        modified:   app/core/context_processors.py
+        modified:   templates/partials/header.html
+        new file:   templates/partials/nav-brows-all-categories.html
+
+        Activities:
+
+        1. In templates/partials reate nav-brows-all-categories.html file
+        2. Move Brows All Categories menu to nav-brows-all-categories.html from header.html
+        3. Include nav-brows-all-categories.html in header.html
+        4. Slice category in default() method in context-processors.html
+        5. Load/loop categories instance to nav-brows-all-categories.html
+        6. Testing: refresh browser
+        7. Result: all good
+

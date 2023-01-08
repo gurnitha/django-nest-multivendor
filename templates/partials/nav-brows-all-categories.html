@@ -1,0 +1,47 @@
+{% load static %}
+
+                            <a class="categories-button-active" href="#">
+                                <span class="fi-rs-apps"></span> <span class="et">Browse</span> All Categories
+                                <i class="fi-rs-angle-down"></i>
+                            </a>
+                            <div class="categories-dropdown-wrap categories-dropdown-active-large font-heading">
+                                <div class="d-flex categori-dropdown-inner">
+                                    <ul>
+                                        {% for cat_key in cat_keys %}
+                                        <li>
+                                            <a href="{% url 'core:product_by_category_list_view' cat_key.cid %}"> <img src="{{ cat_key.image.url }}" alt="" />{{ cat_key.title }}</a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <ul>
+                                        {% for cat_key2 in cat_keys2 %}
+                                        <li>
+                                            <a href="{% url 'core:product_by_category_list_view' cat_key2.cid %}"> <img src="{{ cat_key2.image.url }}" alt="" />{{ cat_key2.title }}</a>
+                                        </li>
+                                        {% endfor %}
+                                        <hr>
+                                        <li><a href="{% url 'core:category_list_view' %}">All categories</a></li>
+                                    </ul>
+                                </div>
+                                <div class="more_slide_open" style="display: none">
+                                    <div class="d-flex categori-dropdown-inner">
+                                        <ul>
+                                            <li>
+                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/icon-1.svg' %}" alt="" />Milks and Dairies</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/icon-2.svg' %}" alt="" />Clothing & beauty</a>
+                                            </li>
+                                        </ul>
+                                        <ul class="end">
+                                            <li>
+                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/icon-3.svg' %}" alt="" />Wines & Drinks</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/icon-4.svg' %}" alt="" />Fresh Seafood</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="more_categories"><span class="icon"></span> <span class="heading-sm-1">Show more...</span></div>
+                            </div>
