@@ -1,5 +1,3 @@
-{% load static %}
-
                             <a class="categories-button-active" href="#">
                                 <span class="fi-rs-apps"></span> <span class="et">Browse</span> All Categories
                                 <i class="fi-rs-angle-down"></i>
@@ -7,39 +5,37 @@
                             <div class="categories-dropdown-wrap categories-dropdown-active-large font-heading">
                                 <div class="d-flex categori-dropdown-inner">
                                     <ul>
-                                        {% for cat_key in cat_keys %}
+                                    	{% for cat_key in cat_keys %}
                                         <li>
                                             <a href="{% url 'core:product_by_category_list_view' cat_key.cid %}"> <img src="{{ cat_key.image.url }}" alt="" />{{ cat_key.title }}</a>
                                         </li>
                                         {% endfor %}
                                     </ul>
-                                    <ul>
-                                        {% for cat_key2 in cat_keys2 %}
+                                    <ul class="end">
+                                    	{% for cat_key2 in cat_keys2 %}
                                         <li>
                                             <a href="{% url 'core:product_by_category_list_view' cat_key2.cid %}"> <img src="{{ cat_key2.image.url }}" alt="" />{{ cat_key2.title }}</a>
                                         </li>
                                         {% endfor %}
-                                        <hr>
-                                        <li><a href="{% url 'core:category_list_view' %}">All categories</a></li>
                                     </ul>
                                 </div>
                                 <div class="more_slide_open" style="display: none">
                                     <div class="d-flex categori-dropdown-inner">
                                         <ul>
+                                        	{% for cat_key3 in cat_keys3 %}
                                             <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/icon-1.svg' %}" alt="" />Milks and Dairies</a>
+                                                <a href="{% url 'core:product_by_category_list_view' cat_key3.cid %}"> <img src="{{ cat_key3.image.url }}" alt="" />{{ cat_key3.title }}</a>
                                             </li>
-                                            <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/icon-2.svg' %}" alt="" />Clothing & beauty</a>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
                                         <ul class="end">
+                                        	{% for cat_key4 in cat_keys4 %}
                                             <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/icon-3.svg' %}" alt="" />Wines & Drinks</a>
+                                                <a href="{% url 'core:product_by_category_list_view' cat_key4.cid %}"> <img src="{{ cat_key4.image.url }}" alt="" />{{ cat_key4.title }}</a>
                                             </li>
-                                            <li>
-                                                <a href="shop-grid-right.html"> <img src="{% static 'assets/imgs/theme/icons/icon-4.svg' %}" alt="" />Fresh Seafood</a>
-                                            </li>
+                                            {% endfor %}
+                                            <hr>
+                                            <li><a href="{% url 'core:category_list_view' %}">All categories</a></li>
                                         </ul>
                                     </div>
                                 </div>
