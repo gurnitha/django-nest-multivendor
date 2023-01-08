@@ -15,14 +15,14 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="page-about.html">About</a>
-                                    </li>
-                                    <li>
                                         <a href="shop-grid-right.html">Category <i class="fi-rs-angle-down"></i></a>
                                         <ul class="sub-menu">
                                             {% for cat_key in cat_keys %}
-                                            <li><a href="shop-grid-right.html">{{ cat_key }}</a></li>
+                                            <li><a href="{% url 'core:product_by_category_list_view' cat_key.cid %}">{{ cat_key.title }}</a></li>
                                             {% endfor %}
+                                            <hr>
+                                            <li><a href="{% url 'core:category_list_view' %}">All categories</a></li>
+                                            
                                         </ul>
                                     </li>
                                     <li>
@@ -168,6 +168,9 @@
                                     </li>
                                     <li>
                                         <a href="page-contact.html">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a href="page-about.html">About</a>
                                     </li>
                                 </ul>
                             </nav>
