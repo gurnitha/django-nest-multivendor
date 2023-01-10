@@ -759,4 +759,14 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         NEXT: Add vendors template
 
-        
+
+#### 15.2 Add template to vendors page
+
+        modified:   README.md
+        modified:   templates/app/core/vendor_list.html
+
+        Activities:
+
+        1. Adding html template to vendors page
+
+        NEXT: Define logic to vendor_list_view function       
