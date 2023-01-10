@@ -770,3 +770,23 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         1. Adding html template to vendors page
 
         NEXT: Define logic to vendor_list_view function       
+
+
+#### 15.3 Add logic to vendor_list_view and render vendors to vendor's page
+
+        modified:   README.md
+        new file:   app/core/migrations/0023_auto_20230111_0009.py
+        modified:   app/core/models.py
+        modified:   app/core/views.py
+        modified:   templates/app/core/vendor_list.html
+
+        Activities:
+
+        1. Modified the vendor field in Product model by adding 
+           relatad_name='vendor_product', that is like product-by vendor
+        2. Run migration to make change in the Product's table field.
+        3. In vendor_list_view function add logic to get all vendors
+        4. Load the instances to the the vendor pade.
+
+        NEXT: ...?
+

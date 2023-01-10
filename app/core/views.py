@@ -48,6 +48,9 @@ def product_by_category_list_view(request, cat_id):
 
 # Vendor List
 def vendor_list_view(request):
+	vendors = Vendor.objects.all()
+	# print(vendors)
 	context = {
+		'vendors':vendors
 	}
 	return render(request, 'app/core/vendor_list.html', context)
