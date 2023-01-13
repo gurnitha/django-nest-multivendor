@@ -20,4 +20,5 @@ urlpatterns = [
 
     # Vendor
     path('vendors/', views.vendor_list_view, name='vendor_list_view'),
+    path('vendor/<vid>', views.vendor_detail_view, name='vendor_detail_view'),
 ]

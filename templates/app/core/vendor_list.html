@@ -91,7 +91,7 @@
                             </div>
                             <div class="vendor-img-action-wrap">
                                 <div class="vendor-img">
-                                    <a href="vendor-details-1.html">
+                                    <a href="{% url 'core:vendor_detail_view' vendor.vid %}">
                                         <img class="default-img" src="{{vendor.image.url}}" alt="" />
                                     </a>
                                 </div>
@@ -104,7 +104,7 @@
                                     <div class="product-category">
                                         <span class="text-muted">Since {{vendor.date|date:'Y'}}</span>
                                     </div>
-                                    <h4 class="mb-5"><a href="vendor-details-1.html">{{vendor.title}}</a></h4>
+                                    <h4 class="mb-5"><a href="{% url 'core:vendor_detail_view' vendor.vid %}">{{vendor.title}}</a></h4>
                                     <div class="product-rate-cover">
                                         <div class="product-rate d-inline-block">
                                             <div class="product-rating" style="width: 90%"></div>
@@ -118,7 +118,7 @@
                                         </ul>
                                     </div>
                                     <br>
-                                    <a href="vendor-details-1.html" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
+                                    <a href="{% url 'core:vendor_detail_view' vendor.vid %}" class="btn btn-xs">Visit Store <i class="fi-rs-arrow-small-right"></i></a>
                                 </div>
                             </div>
                         </div>

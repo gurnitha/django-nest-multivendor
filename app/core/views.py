@@ -54,3 +54,13 @@ def vendor_list_view(request):
 		'vendors':vendors
 	}
 	return render(request, 'app/core/vendor_list.html', context)
+
+
+# Vendor Detail
+def vendor_detail_view(request, vid):
+	vendor = Vendor.objects.get(vid=vid)
+	# print(vendor)
+	context = {
+		'vendor':vendor
+	}
+	return render(request, 'app/core/vendor_detail.html', context)

@@ -790,3 +790,21 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         NEXT: ...?
 
+
+#### 15.4 Vendor detail - Part 1: Static
+
+        modified:   README.md
+        modified:   app/core/urls.py
+        modified:   app/core/views.py
+        new file:   templates/app/core/vendor_detail.html
+        modified:   templates/app/core/vendor_list.html
+
+        Aktivities:
+
+        1. Define url path
+        2. Defeine vendor_detail_view
+        3. Create a new file: vendor_detail.html
+        4. Adding html template to vendor_detail page
+        5. Add dynamic links in vendor_list page to link vendor_detail page
+
+        NEXT: Vendor detail - Part 2: Dynamic
