@@ -808,3 +808,48 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         5. Add dynamic links in vendor_list page to link vendor_detail page
 
         NEXT: Vendor detail - Part 2: Dynamic
+
+
+#### 15.5 Vendor detail - Part 2: Dynamic
+
+        modified:   README.md
+        new file:   app/core/migrations/0024_vendor_cover_image.py
+        modified:   app/core/models.py
+        modified:   app/core/views.py
+        new file:   media/user_directory_path/vendor-1.png
+        ...
+        new file:   media/user_directory_path/vendor-header-bg.png
+        modified:   templates/app/core/vendor_detail.html
+
+        Aktivities:
+
+        1. Change Vendor model by adding a new field:
+                cover_image = models.ImageField(upload_to='user_directory_path', default='vendor.jpg')
+        2. Run and apply migrations
+        3. Working on vendor's banner
+        4. Showing we found xx item/s
+           <p>We found <strong class="text-brand">{{products.count}}</strong> 
+           item{{products.count|pluralize}} for you!</p>
+        5. Showing product by vendor:
+           {% for product in products %}
+                -{{product.get_percentage|floatformat:0}}%
+                {{product.category.title}}
+                {{product.title|truncatechars:15}}
+                {{product.description|truncatechars:75}}
+                ${{product.price}}
+                ${{product.old_price}}
+           {% endfor %}
+        6. Showing product by category:
+           {% for cat in categories %}
+                <li>
+                <a href="shop-grid-right.html"> 
+                    <img src="{{cat.image.url}}" alt="" />
+                    {{cat.title}}
+                </a>
+                <span class="count">{{cat.category.all.count}}</span>
+                </li>
+            {% endfor %}
+
+
+
+

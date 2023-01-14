@@ -60,7 +60,10 @@ def vendor_list_view(request):
 def vendor_detail_view(request, vid):
 	vendor = Vendor.objects.get(vid=vid)
 	# print(vendor)
+	products = Product.objects.filter(vendor=vendor, status_choice='published')
+	# print(products)
 	context = {
-		'vendor':vendor
+		'vendor':vendor,
+		'products':products,
 	}
 	return render(request, 'app/core/vendor_detail.html', context)
