@@ -851,5 +851,14 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
             {% endfor %}
 
 
+#### 15.6 Vendor lists - Add links in navbar
+
+        modified:   README.md
+        modified:   templates/partials/nav-bar.html
+
+        Aktivities:
+
+        1. Add links to navbar
+
 
 
