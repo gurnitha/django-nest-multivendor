@@ -888,3 +888,29 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         new file:   templates/app/core/product_detail.html
 
 
+#### 16.2 Product detail - Add static template and load static files
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Add html template and load static files
+        modified:   templates/app/core/product_detail.
+
+        {% extends 'base.html' %}
+        {% load static %}
+
+        {% block content %}
+        
+        <main class="main">
+        ...
+        </main>
+        {% endblock content %}
+
+
+
+
+
+
+
