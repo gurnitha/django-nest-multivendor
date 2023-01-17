@@ -24,10 +24,11 @@
                                             <span class="zoom-icon"><i class="fi-rs-search"></i></span>
                                             <!-- MAIN SLIDES -->
                                             <div class="product-image-slider">
+
                                                 <figure class="border-radius-10">
-                                                    <img src="{% static 'assets/imgs/shop/product-16-2.jpg' %}" alt="product image" />
+                                                    <img src="{{product.prod_image.url}}" alt="product image" />
                                                 </figure>
-                                                <figure class="border-radius-10">
+                                                <!-- <figure class="border-radius-10">
                                                     <img src="{% static 'assets/imgs/shop/product-16-1.jpg' %}" alt="product image" />
                                                 </figure>
                                                 <figure class="border-radius-10">
@@ -44,7 +45,7 @@
                                                 </figure>
                                                 <figure class="border-radius-10">
                                                     <img src="{% static 'assets/imgs/shop/product-16-7.jpg' %}" alt="product image" />
-                                                </figure>
+                                                </figure> -->
                                             </div>
                                             <!-- THUMBNAILS -->
                                             <div class="slider-nav-thumbnails">

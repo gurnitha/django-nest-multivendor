@@ -909,6 +909,22 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         {% endblock content %}
 
 
+#### 16.3 Product detail - Loding prod_image in slider section
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Not sure what has changed
+        modified:   app/core/views.py
+
+        3. Rendering prod_image
+        modified:   templates/app/core/product_detail.html
+
+        <figure class="border-radius-10">
+            <img src="{{product.prod_image.url}}" alt="product image" />
+        </figure>
 
 
 

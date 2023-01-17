@@ -31,7 +31,7 @@ def product_list_view(request):
 def product_detail_view(request, any):
 	product = Product.objects.get(pid=any)
 	# product = get_object_or_404(Product, vid=vid) # this similar to the above
-	# print(products)
+	# print(product)
 	context = {'product':product}
 	return render(request, 'app/core/product_detail.html', context)
 
