@@ -1026,5 +1026,30 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   templates/app/core/product_detail.html
 
 
+#### 16.6 Product detail - Load product spesifications 
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Modified Product model
+        modified:   app/core/models.py
+
+        ...
+        type = models.CharField(max_length=100, default='Organic', null=True, blank=True)
+        stock = models.CharField(max_length=100, default='10', null=True, blank=True)
+        life = models.CharField(max_length=100, default='100', null=True, blank=True)
+        mfd = models.DateTimeField(auto_now_add=False , null=True, blank=True)
+
+        3. Run and apply migration
+        new file:   app/core/migrations/0027_product_life_product_mfd_product_stock_product_type_and_more.py
+        
+        4. Update products from admin
+        new file:   media/user_directory_path/cat-1.png
+        new file:   media/user_directory_path/product-13-2_BCyjwCF.jpg
+
+        5. Load product specs
+        modified:   templates/app/core/product_detail.html
 
 

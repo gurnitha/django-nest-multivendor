@@ -82,8 +82,8 @@
                                             <div class="short-desc mb-30">
                                                 <p class="font-lg">{{product.description}}</p>
                                             </div>
-                                            <!-- <div class="attr-detail attr-size mb-30">
-                                                <strong class="mr-10">Size / Weight: </strong>
+                                            <div class="attr-detail attr-size mb-30">
+                                                <strong class="mr-10" style="color:red;">Size / Weight (not yet): </strong>
                                                 <ul class="list-filter size-filter font-small">
                                                     <li><a href="#">50g</a></li>
                                                     <li class="active"><a href="#">60g</a></li>
@@ -91,7 +91,7 @@
                                                     <li><a href="#">100g</a></li>
                                                     <li><a href="#">150g</a></li>
                                                 </ul>
-                                            </div> -->
+                                            </div>
                                             <div class="detail-extralink mb-50">
                                                 <div class="detail-qty border radius">
                                                     <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
@@ -106,14 +106,14 @@
                                             </div>
                                             <div class="font-xs">
                                                 <ul class="mr-50 float-start">
-                                                    <li class="mb-5">Type: <span class="text-brand">Organic</span></li>
-                                                    <li class="mb-5">MFG:<span class="text-brand"> Jun 4.2022</span></li>
-                                                    <li>LIFE: <span class="text-brand">70 days</span></li>
+                                                    <li class="mb-5">Type: <span class="text-brand">{{product.type}}</span></li>
+                                                    <li class="mb-5">MFG:<span class="text-brand"> {{product.mfd|date}}</span></li>
+                                                    <li>LIFE: <span class="text-brand">{{product.life}} days</span></li>
                                                 </ul>
                                                 <ul class="float-start">
-                                                    <li class="mb-5">SKU: <a href="#">FWM15VKT</a></li>
+                                                    <li class="mb-5">SKU: <a href="#">{{product.sku}}</a></li>
                                                     <li class="mb-5">Tags: <a href="#" rel="tag">Snack</a>, <a href="#" rel="tag">Organic</a>, <a href="#" rel="tag">Brown</a></li>
-                                                    <li>Stock:<span class="in-stock text-brand ml-5">8 Items In Stock</span></li>
+                                                    <li>Stock:<span class="in-stock text-brand ml-5">{{product.stock}} Items In Stock</span></li>
                                                 </ul>
                                             </div>
                                         </div>
