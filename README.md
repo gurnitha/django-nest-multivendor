@@ -927,6 +927,87 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         </figure>
 
 
+#### 16.4 Product detail - Loading product image and thumbnails
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Modified fields of ProductImage model
+           before: image
+           now   : thumbnail
+
+           before: no related_name
+           now   : related_name='related_products',
+        modified:   app/core/models.py
+
+        class ProductImage(models.Model):
+                thumbnail = models.ImageField(upload_to='product-images/thumbnails/', default='product.jpg')
+                product = models.ForeignKey(Product, related_name='related_products', on_delete=models.SET_NULL, null=True)
+                created = models.DateTimeField(auto_now_add=True)
+                updated = models.DateTimeField(null=True, blank=True)
+
+        3. Run and apply migrations
+        new file:   app/core/migrations/0025_alter_productimage_product.py
+        new file:   app/core/migrations/0026_remove_productimage_image_productimage_thumbnail_and_more.py
+
+        4. Modified views
+        modified:   app/core/views.py
+
+        5. Add some images from admin panel
+        new file:   media/product-images/thumbnail-1.jpg
+        ...
+        new file:   media/product-images/thumbnails/thumbnail-9.jpg
+
+        6. Load product, prod_image, thumbnails to detail page
+        modified:   templates/app/core/product_detail.html
+
+        <div class="detail-gallery">
+            <span class="zoom-icon"><i class="fi-rs-search"></i></span>
+            <!-- MAIN SLIDES -->
+            <div class="product-image-slider">
+
+                <!-- Get product image -->
+                <figure class="border-radius-10">
+                    <img src="{{product.prod_image.url}}" alt="product image" />
+                </figure>
+                <!-- Get product image -->
+
+                <!-- Get thumbnail for product image -->
+                {% for product in products %}
+                <figure class="border-radius-10">
+                    <img src="{{product.thumbnail.url}}" alt="product image" />
+                </figure>
+                {% endfor %}
+                <!-- Get thumbnail for product image -->
+
+            </div>
+
+            <!-- THUMBNAILS -->
+            <div class="slider-nav-thumbnails">
+
+                <!-- Get product image as thumbnail -->
+                <div><img src="{{product.prod_image.url}}" alt="product image" /></div>
+                <!-- Get product image as thumbnail -->
+
+                <!-- Get thumbnail -->
+                {% for product in products %}
+                <div><img src="{{product.thumbnail.url}}" alt="product image" /></div>
+                {% endfor %}
+                <!-- Get thumbnail -->
+
+            </div>
+        </div>
+
+        NOTE:
+
+        1. this: <!-- Get product image -->
+           the same with this:<!-- Get product image as thumbnail -->
+
+        2. this: <!-- Get thumbnail for product image -->
+           the same with this: <!-- Get thumbnail -->
+
 
 
 

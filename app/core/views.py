@@ -29,10 +29,15 @@ def product_list_view(request):
 
 # Product Detail
 def product_detail_view(request, any):
+	# Get product by pid
 	product = Product.objects.get(pid=any)
 	# product = get_object_or_404(Product, vid=vid) # this similar to the above
 	# print(product)
-	context = {'product':product}
+
+	# Get related products
+	products = product.related_products.all()
+	# print(products)
+	context = {'product':product, 'products':products}
 	return render(request, 'app/core/product_detail.html', context)
 
 

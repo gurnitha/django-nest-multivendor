@@ -25,37 +25,35 @@
                                             <!-- MAIN SLIDES -->
                                             <div class="product-image-slider">
 
+                                                <!-- Get product image -->
                                                 <figure class="border-radius-10">
                                                     <img src="{{product.prod_image.url}}" alt="product image" />
                                                 </figure>
-                                                <!-- <figure class="border-radius-10">
-                                                    <img src="{% static 'assets/imgs/shop/product-16-1.jpg' %}" alt="product image" />
-                                                </figure>
+                                                <!-- Get product image -->
+
+                                                <!-- Get thumbnail for product image -->
+                                                {% for product in products %}
                                                 <figure class="border-radius-10">
-                                                    <img src="{% static 'assets/imgs/shop/product-16-3.jpg' %}" alt="product image" />
+                                                    <img src="{{product.thumbnail.url}}" alt="product image" />
                                                 </figure>
-                                                <figure class="border-radius-10">
-                                                    <img src="{% static 'assets/imgs/shop/product-16-4.jpg' %}" alt="product image" />
-                                                </figure>
-                                                <figure class="border-radius-10">
-                                                    <img src="{% static 'assets/imgs/shop/product-16-5.jpg' %}" alt="product image" />
-                                                </figure>
-                                                <figure class="border-radius-10">
-                                                    <img src="{% static 'assets/imgs/shop/product-16-6.jpg' %}" alt="product image" />
-                                                </figure>
-                                                <figure class="border-radius-10">
-                                                    <img src="{% static 'assets/imgs/shop/product-16-7.jpg' %}" alt="product image" />
-                                                </figure> -->
+                                                {% endfor %}
+                                                <!-- Get thumbnail for product image -->
+
                                             </div>
+
                                             <!-- THUMBNAILS -->
                                             <div class="slider-nav-thumbnails">
-                                                <div><img src="{% static 'assets/imgs/shop/thumbnail-3.jpg' %}" alt="product image" /></div>
-                                                <div><img src="{% static 'assets/imgs/shop/thumbnail-4.jpg' %}" alt="product image" /></div>
-                                                <div><img src="{% static 'assets/imgs/shop/thumbnail-5.jpg' %}" alt="product image" /></div>
-                                                <div><img src="{% static 'assets/imgs/shop/thumbnail-6.jpg' %}" alt="product image" /></div>
-                                                <div><img src="{% static 'assets/imgs/shop/thumbnail-7.jpg' %}" alt="product image" /></div>
-                                                <div><img src="{% static 'assets/imgs/shop/thumbnail-8.jpg' %}" alt="product image" /></div>
-                                                <div><img src="{% static 'assets/imgs/shop/thumbnail-9.jpg' %}" alt="product image" /></div>
+
+                                                <!-- Get product image as thumbnail -->
+                                                <div><img src="{{product.prod_image.url}}" alt="product image" /></div>
+                                                <!-- Get product image as thumbnail -->
+
+                                                <!-- Get product thumbnail -->
+                                                {% for product in products %}
+                                                <div><img src="{{product.thumbnail.url}}" alt="product image" /></div>
+                                                {% endfor %}
+                                                <!-- Get product thumbnail -->
+
                                             </div>
                                         </div>
                                         <!-- End Gallery -->
