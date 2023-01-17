@@ -1009,5 +1009,22 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
            the same with this: <!-- Get thumbnail -->
 
 
+#### 16.5 Product detail - Load product information
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Modified get_percentage function in Product model
+        modified:   app/core/models.py
+
+        from: # prod_current_price = (self.price / self.old_price) * 100
+        to  :   prod_current_price = (self.old_price - self.price) / (self.old_price) * 100
+        
+        3. Load product infomrmation
+        modified:   templates/app/core/product_detail.html
+
+
 
 

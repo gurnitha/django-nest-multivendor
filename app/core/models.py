@@ -131,7 +131,8 @@ class Product(models.Model):
 
 	# Define discounted price
 	def get_percentage(self):
-		prod_current_price = (self.price / self.old_price) * 100
+		# prod_current_price = (self.price / self.old_price) * 100
+		prod_current_price = (self.old_price - self.price) / (self.old_price) * 100
 		return prod_current_price
 
 
