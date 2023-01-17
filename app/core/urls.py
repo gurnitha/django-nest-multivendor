@@ -13,6 +13,7 @@ urlpatterns = [
     # Homepage
     path('', views.index, name='index'),
     path('products/', views.product_list_view, name='product_list_view'),
+    path('product-detail/<any>/', views.product_detail_view, name='product_detail_view'),
 
     # Category
     path('categories/', views.category_list_view, name='category_list_view'),

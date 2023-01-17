@@ -1,7 +1,7 @@
 # app/core/views.py
 
 # Django modules
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Locals
 from app.core.models import Product, Category, Vendor
@@ -25,6 +25,15 @@ def product_list_view(request):
 	# print(products)
 	context = {'products':products}
 	return render(request, 'app/core/product_list.html', context)
+
+
+# Product Detail
+def product_detail_view(request, any):
+	product = Product.objects.get(pid=any)
+	# product = get_object_or_404(Product, vid=vid) # this similar to the above
+	# print(products)
+	context = {'product':product}
+	return render(request, 'app/core/product_detail.html', context)
 
 
 # Category List

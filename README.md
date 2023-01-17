@@ -20,6 +20,7 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         new file:   config/wsgi.py
         new file:   manage.py
 
+
 #### 1.5 Create a new app: app/core
 
         (venv3932) λ mkdir app\core
@@ -33,10 +34,12 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         new file:   app/core/tests.py
         new file:   app/core/views.py
 
+
 #### 1.6 Register core app to config/settings.py, run the server
 
         modified:   app/core/apps.py
         modified:   config/settings.py
+
 
 #### 1.7 Hello Wordl using url, view and templates
 
@@ -46,10 +49,12 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   config/urls.py
         new file:   templates/app/core/index.html
 
+
 #### 1.8 Add html template to index
 
         modified:   .gitignore
         modified:   templates/app/core/index.html
+
 
 #### 1.9 Setting up static and media files
 
@@ -57,10 +62,12 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   config/settings.py
         modified:   config/urls.py
 
+
 #### 1.10 Add and loading static files
 
         modified:   README.md
         modified:   templates/app/core/index.html
+
 
 #### 1.11 Template inheritance
 
@@ -74,7 +81,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         new file:   templates/partials/nav-mobile.html
         new file:   templates/partials/preloader.html
         new file:   templates/partials/quickview.html
-
 
 
 ## 2. Setting up PostgreSQL database
@@ -116,7 +122,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   config/settings.py
-
 
 
 ## 3. Custome user model
@@ -198,7 +203,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
     modified:   README.md
     modified:   app/userauth/admin.py
-
 
 
 ## 4. Setting up admin panel
@@ -291,7 +295,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   templates/app/userauth/register.html
 
 
-
 ## 6. User login system
 
 
@@ -315,7 +318,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         It works, but could not access the login page.
         For now, I disabled it.
         And I could logged in successfully.
-
 
 
 ## 7. User logout system
@@ -343,7 +345,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   templates/partials/header.html
 
 
-
 ## 8. Alerts in Django
 
 
@@ -368,7 +369,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
 #### 8.2 Use jQuery to make alert disappear automatically in some seconds
 
-
         modified:   README.md
         modified:   templates/base.html
         modified:   templates/partials/header.html
@@ -377,7 +377,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         Add jQery CDN and Ajax in the header.
         It works.
-
         
 
 ## 9. Django model: Product, Category, Vendor, ProductImage, CartOrder, Wishlist
@@ -475,7 +474,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   app/core/models.py
 
 
-
 ## 10. Product list view
 
 
@@ -503,7 +501,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   README.md
         modified:   app/core/views.py
-
 
 
 ## 11. Products list
@@ -535,7 +532,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         modified:   app/core/views.py
         modified:   templates/app/core/product_list.html
-
 
 
 ## 12. Category
@@ -590,7 +586,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   templates/app/core/category_list.html
 
 
-
 ## 13. Product-based Category List View
 
 
@@ -622,7 +617,6 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   app/core/views.py
         modified:   templates/app/core/category_list.html
         modified:   templates/app/core/product_by_category_list.html
-
 
 
 ## 14. Django Context Processors (video 18)
@@ -860,5 +854,37 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         1. Add links to navbar
 
+
+## 16. Product detail
+
+
+#### 16.1 Product detail - Urls, Views, Template
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Configure product-detail path
+        modified:   app/core/urls.py
+
+        path('product-detail/<any>/', views.product_detail_view, name='product_detail_view'),
+
+        3. Configure the logic
+        modified:   app/core/views.py
+
+        # Product Detail
+        def product_detail_view(request, any):
+                product = Product.objects.get(pid=any)
+                # product = get_object_or_404(Product, vid=vid) # this similar to the above
+                # print(products)
+        context = {'product':product}
+        return render(request, 'app/core/product_detail.html', context)
+
+        4. Modified
+        modified:   app/core/admin.py
+
+        5. Create a new page with block tags
+        new file:   templates/app/core/product_detail.html
 
 
