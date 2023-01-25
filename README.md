@@ -1077,3 +1077,23 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         
         6. Load full product description and truncate it as well 
         modified:   templates/app/core/product_detail.html
+
+
+#### 16.8 Product detail - Redering user address
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Define address object
+        modified:   app/core/context_processors.py
+
+        3. Render it to product_detail with conditionals to show
+           verified or unverified address
+        modified:   templates/app/core/product_detail.html
+
+        NOTE:
+
+        1. It worked.
+        2. But when logged out, it showed error

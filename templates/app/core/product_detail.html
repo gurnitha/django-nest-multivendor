@@ -575,8 +575,13 @@
                                     <li>
                                         <i class="fi fi-rs-marker mr-10 text-brand"></i>
                                         <span>
-                                            5171 W Campbell Ave <br />
-                                            undefined Kent, Utah 53127 <br />United States
+                                           {{address.address}} 
+                                           <br>
+                                           {% if address.status == True %}
+                                           <span class="text-success">Verified address</span>
+                                           {% else %}
+                                           <span class="text-danger">Unverified address</span>
+                                           {% endif %}
                                         </span>
                                         <a href="#" class="change float-end">Change</a>
                                     </li>
