@@ -1134,3 +1134,30 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         2. Displaying vendor information
         modified:   templates/app/core/product_detail.htm
+
+
+#### 16.11 Product detail - Display and link product-by-category
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Load product-by-category and link them to catagory detail page
+        modified:   templates/app/core/product_detail.html
+
+        <div class="sidebar-widget widget-category-2 mb-30">
+
+                <h5 class="section-title style-1 mb-30">Category</h5>
+
+                <ul>
+                    {% for category in categories %}
+                    <li>
+                        <a href="{% url 'core:product_by_category_list_view' category.cid %}"> 
+                        <img src="{{category.image.url}}" alt="" />{{category.title}}
+                        </a>
+                        <span class="count">{{ category.category.count }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+        </div>
