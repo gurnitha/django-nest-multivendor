@@ -1123,3 +1123,14 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
          _100 % Authentic
          _100 Days Return
          _100 Months Warranty
+
+
+#### 16.10 Product detail - Display Vendor information
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Displaying vendor information
+        modified:   templates/app/core/product_detail.htm
