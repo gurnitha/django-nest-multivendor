@@ -1097,3 +1097,29 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         1. It worked.
         2. But when logged out, it showed error
+
+
+#### 16.9 Product detail - Return & Warranty
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Rendring return and warranty
+        modified:   templates/app/core/product_detail.html
+
+        2.1 Codes
+        Return & Warranty
+
+        <span>{{product.vendor.authentic_rating}} % Authentic </span>
+        <span>{{product.vendor.days_return}} Days Return </span>
+        {{product.vendor.warranty_period}} Months Warranty </span>
+
+        
+        2.2 Result
+        Return & Warranty
+
+         _100 % Authentic
+         _100 Days Return
+         _100 Months Warranty
