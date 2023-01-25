@@ -80,7 +80,7 @@
                                                 </div>
                                             </div>
                                             <div class="short-desc mb-30">
-                                                <p class="font-lg">{{product.description}}</p>
+                                                <p class="font-lg">{{product.description|truncatechars:150}}</p>
                                             </div>
                                             <div class="attr-detail attr-size mb-30">
                                                 <strong class="mr-10" style="color:red;">Size / Weight (not yet): </strong>
@@ -112,8 +112,8 @@
                                                 </ul>
                                                 <ul class="float-start">
                                                     <li class="mb-5">SKU: <a href="#">{{product.sku}}</a></li>
-                                                    <li class="mb-5">Tags: <a href="#" rel="tag">Snack</a>, <a href="#" rel="tag">Organic</a>, <a href="#" rel="tag">Brown</a></li>
-                                                    <li>Stock:<span class="in-stock text-brand ml-5">{{product.stock}} Items In Stock</span></li>
+                                                    <li class="mb-5">Tags: <a href="#" rel="tag">Snack</a>, <a href="#" rel="tag">{{product.type}}</a>, <a href="#" rel="tag">Brown</a></li>
+                                                    <li>Stock:<span class="in-stock text-brand ml-5">{{product.stock_count}} Items In Stock</span></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -139,6 +139,9 @@
                                         <div class="tab-content shop_info_tab entry-main-content">
                                             <div class="tab-pane fade show active" id="Description">
                                                 <div class="">
+                                                    <p>{{product.description}}</p>
+                                                </div>
+                                                <!-- <div class="">
                                                     <p>Uninhibited carnally hired played in whimpered dear gorilla koala depending and much yikes off far quetzal goodness and from for grimaced goodness unaccountably and meadowlark near unblushingly crucial scallop tightly neurotic hungrily some and dear furiously this apart.</p>
                                                     <p>Spluttered narrowly yikes left moth in yikes bowed this that grizzly much hello on spoon-fed that alas rethought much decently richly and wow against the frequent fluidly at formidable acceptably flapped besides and much circa far over the bucolically hey precarious goldfinch mastodon goodness gnashed a jellyfish and one however because.</p>
                                                     <ul class="product-more-infor mt-30">
@@ -169,7 +172,7 @@
                                                     <ul class="product-more-infor mt-30">
                                                         <li>Oil separation occurs naturally. May contain pieces of shell.</li>
                                                     </ul>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="tab-pane fade" id="Additional-info">
                                                 <table class="font-md">

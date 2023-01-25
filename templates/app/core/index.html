@@ -92,7 +92,7 @@
                                             <!-- Sliders -->
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="shop-product-right.html">
+                                                    <a href="{% url 'core:product_detail_view' product.pid %}">
                                                         <img class="default-img" src="{{product.prod_image.url}}" alt="" />
                                                         <img class="hover-img" src="{{product.prod_image.url}}" alt="" />
                                                     </a>
@@ -111,7 +111,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">{{product.category}}</a>
                                                 </div>
-                                                <h2><a href="shop-product-right.html">{{product.title}}</a></h2>
+                                                <h2><a href="{% url 'core:product_detail_view' product.pid %}">{{product.title}}</a></h2>
                                                 <div class="product-rate-cover">
                                                     <div class="product-rate d-inline-block">
                                                         <div class="product-rating" style="width: 90%"></div>

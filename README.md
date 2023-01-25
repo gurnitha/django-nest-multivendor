@@ -1053,3 +1053,27 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         modified:   templates/app/core/product_detail.html
 
 
+#### 16.7 Product detail - Redering product description
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Modified Product model
+        modified:   app/core/models.py
+
+        3. Run and apply migrations
+        new file:   app/core/migrations/0028_rename_stock_product_stock_status_alter_product_life.py
+        new file:   app/core/migrations/0029_rename_stock_status_product_stock_count.py
+        
+        4. Add some images
+        new file:   media/product-images/thumbnails/thumbnail-10_BXhTSwa.jpg
+        ...
+        new file:   media/product-images/thumbnails/thumbnail-9_zUsMKT4.jpg
+        
+        5. Add links
+        modified:   templates/app/core/index.html
+        
+        6. Load full product description and truncate it as well 
+        modified:   templates/app/core/product_detail.html

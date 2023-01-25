@@ -105,13 +105,16 @@ class Product(models.Model):
 
 	specifications = models.TextField(null=True, blank=True)
 	type = models.CharField(max_length=100, default='Organic', null=True, blank=True)
-	stock = models.CharField(max_length=100, default='10', null=True, blank=True)
+	stock_count = models.CharField(max_length=100, default='10', null=True, blank=True)
 	life = models.CharField(max_length=100, default='100', null=True, blank=True)
 	mfd = models.DateTimeField(auto_now_add=False , null=True, blank=True)
 
 	# tag = models.ForeignKey(Tag, on_delete=models.SET_NULL, null=True)
 
-	status_choice = models.CharField(choices=PRODUCT_STATUS_CHOICES, max_length=10, default='in_review')
+	status_choice = models.CharField(
+			choices=PRODUCT_STATUS_CHOICES, 
+			max_length=10, default='in_review', 
+			verbose_name='Product status') # It will show in admin panel, 'Product status' instead of 'Status choice'
 
 	status = models.BooleanField(default=True)
 	in_stock = models.BooleanField(default=True)
