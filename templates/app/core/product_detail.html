@@ -115,7 +115,7 @@
                                                         <a href="#">{{product.sku}}</a></li>
                                                     <li class="mb-5">Tags: 
                                                         {% for tag in product.tags.all %}
-                                                        <a href="#" rel="tag">{{tag.name}}</a>,
+                                                        <a href="{% url 'core:tag_list_view' tag.slug %}" rel="tag">{{tag.name}}</a>,
                                                         {% endfor %}
                                                     </li>
                                                     <li>Stock:<span class="in-stock text-brand ml-5">{{product.stock_count}} Items In Stock</span></li>

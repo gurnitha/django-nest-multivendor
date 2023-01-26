@@ -1500,3 +1500,19 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
                 <span></span><a href="{% url 'core:tag_list_view' tag.slug %}">Tag</a> <span></span> {{tag.name|capfirst}}
         </div>
 
+
+#### 18.7 Working with Tags - linked each tag in product-detail page to show product-by-tag
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Render tags here
+        modified:   templates/app/core/tag.html
+
+        3. Add link to tags to show product-detail by tag
+        modified:   templates/app/core/product_detail.html
+
+        
+
