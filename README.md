@@ -1356,3 +1356,14 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
 ## 18. Working with Tags
 
+
+#### 18.1 Working with Tags- Install django-taggit
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Installing django-taggit
+
+        venv3932) λ pip install django-taggit
