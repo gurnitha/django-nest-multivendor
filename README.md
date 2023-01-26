@@ -1161,3 +1161,33 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
                     {% endfor %}
                 </ul>
         </div>
+
+
+#### 16.12 Product detail - Turned off the address
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Turned off the address in context_processors
+        modified:   app/core/context_processors.py
+
+        3. Referring to git repo no. 16.12
+        modified:   templates/app/core/product_detail.html
+
+        <span>
+           {{address.address}} 
+           <br>
+           {% if address.status == True %}
+           <span class="text-success">Verified address</span>
+           {% else %}
+           <span class="text-danger">Unverified address, refer to git repo no: 16.12</span>
+           {% endif %}
+        </span>
+
+        NOTE:
+
+        I turned it off because when I logged out from the admin panel
+        (I was logged in as admin), it gives me error.
+        To fix it, I must turn off the address in the context_processors.

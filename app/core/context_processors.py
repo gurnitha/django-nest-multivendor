@@ -13,7 +13,8 @@ def default(request):
 	# print(cat_values2)
 	# print(cat_values3)
 	# print(cat_values4)
-	address = Address.objects.get(user=request.user)
+	# Get the address who ever logged in
+	# address = Address.objects.get(user=request.user)
 	# print(address)
 	return {
 		'categories': categories,
@@ -21,5 +22,5 @@ def default(request):
 		'cat_keys2': cat_values2,
 		'cat_keys3': cat_values3,
 		'cat_keys4': cat_values4,
-		'address':address,
+		# 'address':address,
 	}
