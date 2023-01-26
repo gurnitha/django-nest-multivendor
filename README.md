@@ -1408,3 +1408,19 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         3. Run and apply migrations
         new file:   app/core/migrations/0031_product_tags.py
 
+
+#### 18.4 Working with Tags - Load tags to product-detail page
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Load tags
+        modified:   templates/app/core/product_detail.html
+
+        <li class="mb-5">Tags: 
+                {% for tag in product.tags.all %}
+                <a href="#" rel="tag">{{tag.name}}</a>,
+                {% endfor %}
+        </li>

@@ -111,8 +111,13 @@
                                                     <li>LIFE: <span class="text-brand">{{product.life}} days</span></li>
                                                 </ul>
                                                 <ul class="float-start">
-                                                    <li class="mb-5">SKU: <a href="#">{{product.sku}}</a></li>
-                                                    <li class="mb-5">Tags: <a href="#" rel="tag">Snack</a>, <a href="#" rel="tag">{{product.type}}</a>, <a href="#" rel="tag">Brown</a></li>
+                                                    <li class="mb-5">SKU: 
+                                                        <a href="#">{{product.sku}}</a></li>
+                                                    <li class="mb-5">Tags: 
+                                                        {% for tag in product.tags.all %}
+                                                        <a href="#" rel="tag">{{tag.name}}</a>,
+                                                        {% endfor %}
+                                                    </li>
                                                     <li>Stock:<span class="in-stock text-brand ml-5">{{product.stock_count}} Items In Stock</span></li>
                                                 </ul>
                                             </div>
