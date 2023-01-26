@@ -443,6 +443,7 @@
                                     <div class="col-12">
                                         <h2 class="section-title style-1 mb-30">Related products</h2>
                                     </div>
+                                    {% if rel_products %}
                                     {% for rel_product in rel_products %}
                                     <div class="col-12">
                                         <div class="row related-products">
@@ -464,6 +465,8 @@
                                                             <span class="hot">Hot: -{{rel_product.get_percentage|floatformat:0}}</span>
                                                         </div>
                                                     </div>
+
+                                                    <!-- realted product by category -->
                                                     <div class="product-content-wrap">
                                                         <h2><a href="shop-product-right.html" tabindex="0">{{rel_product.title|truncatechars:25}}</a></h2>
                                                         <div class="rating-result" title="90%">
@@ -474,11 +477,17 @@
                                                             <span class="old-price">${{rel_product.old_price}}</span>
                                                         </div>
                                                     </div>
+                                                    <!-- realted product by category -->
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     {% endfor %}
+                                    {% else %}
+                                    <div class="col-12">
+                                    <p>There is no related product found ...</p>
+                                    </div>
+                                    {% endif %}
                                 </div>
                                 <!-- related products -->
                             </div>

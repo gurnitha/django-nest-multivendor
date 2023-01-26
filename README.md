@@ -1260,6 +1260,40 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         NEXT: Add conditionals to show message if there is no product-related category found
 
-        
+
+#### 17.4 Related Products - Showing information if there no product-related category found
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Showing product that has no ralted category
+        modified:   templates/app/core/product_detail.html
+
+        <!-- related products -->
+        <div class="row mt-60">
+            <div class="col-12">
+                <h2 class="section-title style-1 mb-30">Related products</h2>
+            </div>
+            {% if rel_products %}
+            {% for rel_product in rel_products %}
+            <div class="col-12">
+            ...
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-12">
+            <p>There is no related product found ...</p>
+            </div>
+            {% endif %}
+         <!-- related products -->
+
+        NOTE:
+
+        1. It works.
+
+        :)
+
 
 
