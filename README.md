@@ -1296,4 +1296,22 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         :)
 
 
+#### 17.5 Related Products - Add link to show detail of the product-related category
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Add link
+         modified:   templates/app/core/product_detail.html
+
+         <a href="{% url 'core:product_detail_view' rel_product.pid %}" tabindex="0"></a>
+
+        NOTE:
+
+        1. It works.
+
+        :)
+
 

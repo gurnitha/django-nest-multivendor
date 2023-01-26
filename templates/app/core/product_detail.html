@@ -451,7 +451,7 @@
                                                 <div class="product-cart-wrap hover-up">
                                                     <div class="product-img-action-wrap">
                                                         <div class="product-img product-img-zoom">
-                                                            <a href="shop-product-right.html" tabindex="0">
+                                                            <a href="{% url 'core:product_detail_view' rel_product.pid %}" tabindex="0">
                                                                 <img class="default-img" src="{{rel_product.prod_image.url}}" alt="" />
                                                                 <img class="hover-img" src="{{rel_product.prod_image_hover.url}}" alt="" />
                                                             </a>
@@ -468,7 +468,7 @@
 
                                                     <!-- realted product by category -->
                                                     <div class="product-content-wrap">
-                                                        <h2><a href="shop-product-right.html" tabindex="0">{{rel_product.title|truncatechars:25}}</a></h2>
+                                                        <h2><a href="{% url 'core:product_detail_view' rel_product.pid %}" tabindex="0">{{rel_product.title|truncatechars:25}}</a></h2>
                                                         <div class="rating-result" title="90%">
                                                             <span> </span>
                                                         </div>
