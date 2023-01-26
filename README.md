@@ -1315,3 +1315,42 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         :)
 
 
+#### 17.6 Related Products - Add link with the shop menu in nav-bar to show product-list page and add link to show product-detail page
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Add link to shop menu in nav-bar
+        modified:   templates/partials/nav-bar.html
+
+        <li>
+                <a href="{% url 'core:product_list_view' %}">Shop <i class="fi-rs-angle-down"></i></a>
+                <ul class="sub-menu">
+                    <li><a href="{% url 'core:product_list_view' %}">Shop Grid – Right Sidebar</a></li>
+                    <li><a href="{% url 'core:product_list_view' %}">Shop Grid – Left Sidebar</a></li>
+                    <li><a href="{% url 'core:product_list_view' %}">Shop List – Right Sidebar</a></li>
+                    <li><a href="{% url 'core:product_list_view' %}">Shop List – Left Sidebar</a></li>
+                    <li><a href="{% url 'core:product_list_view' %}">Shop - Wide</a></li>
+                    ...
+                </ul>    
+        <li>
+
+        3. Add link to show product-detail page
+        modified:   templates/app/core/product_list.html
+
+        <div class="product-img product-img-zoom">
+                <a href="{% url 'core:product_detail_view' product.pid %}">
+                    <img class="default-img" src="{{product.prod_image.url}}" alt="" />
+                    <img class="hover-img" src="{{product.prod_image.url}}" alt="" />
+                </a>
+        </div>
+
+        NOTE:
+
+        1. It works.
+
+        :)
+
+

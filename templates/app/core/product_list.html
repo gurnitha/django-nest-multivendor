@@ -216,7 +216,7 @@
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
+                                        <a href="{% url 'core:product_detail_view' product.pid %}">
                                             <img class="default-img" src="{{product.prod_image.url}}" alt="" />
                                             <img class="hover-img" src="{{product.prod_image.url}}" alt="" />
                                         </a>
