@@ -1354,3 +1354,5 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         :)
 
 
+## 18. Working with Tags
+
