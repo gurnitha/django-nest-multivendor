@@ -1240,3 +1240,26 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         NEXT: Showing the related product by using exclude
 
+
+#### 17.3 Related Products - Showing product related category
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Re-write the logic in product_detail_view
+        rel_products = Product.objects.filter(category=product.category).exclude(pid=any)[:4]
+
+        3. Add product based-category (coffes) in admin
+
+        NOTE:
+
+        1. It works.
+        2. There is no information in the product-detail page if there is no product-related category found
+
+        NEXT: Add conditionals to show message if there is no product-related category found
+
+        
+
+
