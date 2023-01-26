@@ -1195,3 +1195,20 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
 ## 17. Related Products
 
+
+#### 17.1 Related Products - Geting instance of the related product by category in product_detail_view
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Get the product instance
+        modified:   app/core/views.py
+
+        rel_products = Product.objects.filter(category=product.category)
+        print(rel_products)
+
+        3. Result:
+        <QuerySet [<Product: _Gorton’s Beer Battered Fish Fillets>]>
+
