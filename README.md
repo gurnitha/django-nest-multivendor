@@ -1424,3 +1424,55 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
                 <a href="#" rel="tag">{{tag.name}}</a>,
                 {% endfor %}
         </li>
+
+
+#### 18.5 Working with Tags - Create tag page: urls, views, template
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Create path
+        modified:   app/core/urls.py
+
+        path('products/tag/<slug:tag_slug>/', views.tag_list_view, name='tag_list_view')
+        http://127.0.0.1:8000/products/tag/milk/
+
+        3. Create tag_list_view in views
+        modified:   app/core/views.py
+
+        def tag_list_view(request, tag_slug=None):
+        products = Product.objects.filter(status_choice='published').order_by('-id')
+
+        tag = None 
+        if tag_slug:
+                 # If there is slug in the Tags model
+                 # then, slug is equal to what ever we passed in the tag_slug
+                 # Example: http://127.0.0.1:8000/products/tag/lotion
+                tag = get_object_or_404(Tag, slug=tag_slug)
+                # Get all products from Product table which have tags in it and put it in products variable
+                products = products.filter(tags__in=[tag])
+
+        context = {'products':products}
+
+        return render(request, 'app/core/tag.html', context)
+
+        4. Create tag page
+        new file:   templates/app/core/tag.html
+
+        5. Testing:
+        http://127.0.0.1:8000/products/tag/milk/
+
+        
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>Tag page</title>
+        </head>
+        <body>
+                <h1>Tags</h1>
+        </body>
+        </html>

@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404
 
 # Locals
 from app.core.models import Product, Category, Vendor
+from taggit.models import Tag  
 
 # Create your views here.
 
@@ -93,3 +94,20 @@ def vendor_detail_view(request, vid):
 		'products':products,
 	}
 	return render(request, 'app/core/vendor_detail.html', context)
+
+
+def tag_list_view(request, tag_slug=None):
+	products = Product.objects.filter(status_choice='published').order_by('-id')
+
+	tag = None 
+	if tag_slug:
+		 # If there is slug in the Tags model
+		 # then, slug is equal to what ever we passed in the tag_slug
+		 # Example: http://127.0.0.1:8000/products/tag/lotion
+		tag = get_object_or_404(Tag, slug=tag_slug)
+		# Get all products from Product table which have tags in it and put it in products variable
+		products = products.filter(tags__in=[tag])
+
+	context = {'products':products}
+
+	return render(request, 'app/core/tag.html', context)
