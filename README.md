@@ -1389,3 +1389,22 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
             # Third parties
             'taggit',
+
+
+#### 18.3 Working with Tags - Adding tags field in the Product model
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Add tags field in Product model
+        modified:   app/core/models.py
+
+        from taggit.managers import TaggableManager
+
+        tags = TaggableManager(blank=True)
+
+        3. Run and apply migrations
+        new file:   app/core/migrations/0031_product_tags.py
+

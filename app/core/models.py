@@ -4,6 +4,7 @@
 from django.db import models
 from shortuuid.django_fields import ShortUUIDField
 from django.utils.html import mark_safe
+from taggit.managers import TaggableManager
 
 # Locals
 from app.userauth.models import User
@@ -111,6 +112,7 @@ class Product(models.Model):
 	mfd = models.DateTimeField(auto_now_add=False , null=True, blank=True)
 
 	# tag = models.ForeignKey(Tag, on_delete=models.SET_NULL, null=True)
+	tags = TaggableManager(blank=True)
 
 	status_choice = models.CharField(
 			choices=PRODUCT_STATUS_CHOICES, 
