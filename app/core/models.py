@@ -98,6 +98,7 @@ class Product(models.Model):
 	vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True, related_name='vendor_product')
 	title = models.CharField(max_length=100, default='Fresh pear')
 	prod_image = models.ImageField(upload_to='user_directory_path', default='product.jpg')
+	prod_image_hover = models.ImageField(upload_to='user_directory_path', default='product.jpg')
 	description = models.TextField(null=True, blank=True, default='This is the product')
 
 	price = models.DecimalField(max_digits=100, decimal_places=2, default='1.99')

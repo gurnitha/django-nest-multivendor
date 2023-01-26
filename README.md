@@ -1212,3 +1212,31 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         3. Result:
         <QuerySet [<Product: _Gorton’s Beer Battered Fish Fillets>]>
 
+
+#### 17.2 Related Products - Rendering rel_products instance to product_detail page
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Create prod_image_hover field in Product model
+        modified:   app/core/models.py
+
+        3. Run and apply migrations
+        new file:   app/core/migrations/0030_product_prod_image_hover_alter_product_status_choice.py
+
+        4. Add images from admin panel
+        new file:   media/user_directory_path/product-2-1_rRrH2k9.jpg
+        new file:   media/user_directory_path/product-2-2.jpg
+
+        5. Load rel_product to product_detail page
+        modified:   templates/app/core/product_detail.html
+
+        NOTE:
+
+        1. It works
+        2. But it shows the same product, NOT the related product
+
+        NEXT: Showing the related product by using exclude
+
