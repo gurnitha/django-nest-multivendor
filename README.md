@@ -1357,7 +1357,7 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 ## 18. Working with Tags
 
 
-#### 18.1 Working with Tags- Install django-taggit
+#### 18.1 Working with Tags - Install django-taggit
 
         Aktivities:
 
@@ -1367,3 +1367,25 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         2. Installing django-taggit
 
         venv3932) λ pip install django-taggit
+
+
+#### 18.2 Working with Tags - Register taggit to the IINSTALLED_APPS
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Register taggit to settings.py
+        modified:   config/settings.py
+
+        INSTALLED_APPS = [
+
+            # New
+            'jazzmin',
+
+            'django.contrib.admin',
+            ...
+
+            # Third parties
+            'taggit',
