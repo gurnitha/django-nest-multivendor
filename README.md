@@ -1464,7 +1464,7 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         5. Testing:
         http://127.0.0.1:8000/products/tag/milk/
 
-        
+
         <!DOCTYPE html>
         <html>
         <head>
@@ -1476,3 +1476,27 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
                 <h1>Tags</h1>
         </body>
         </html>
+
+
+#### 18.6 Working with Tags - Add template to tag page and render tags in it
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Modified tag_list_view
+        modified:   app/core/views.py
+
+        context = {
+                'tag':tag,
+
+        3. Copy product_by_category page for tag page and render tags here
+        modified:   templates/app/core/tag.html
+
+        <h1 class="mb-15">{{tag.name|capfirst}}</h1>
+        <div class="breadcrumb">
+                <a href="{% url 'core:index' %}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                <span></span><a href="{% url 'core:tag_list_view' tag.slug %}">Tag</a> <span></span> {{tag.name|capfirst}}
+        </div>
+

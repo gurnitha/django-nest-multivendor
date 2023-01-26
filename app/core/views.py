@@ -105,9 +105,14 @@ def tag_list_view(request, tag_slug=None):
 		 # then, slug is equal to what ever we passed in the tag_slug
 		 # Example: http://127.0.0.1:8000/products/tag/lotion
 		tag = get_object_or_404(Tag, slug=tag_slug)
+		# print(tag)
 		# Get all products from Product table which have tags in it and put it in products variable
 		products = products.filter(tags__in=[tag])
+		# print(products)
 
-	context = {'products':products}
+	context = {
+		'tag':tag,
+		'products':products,
+	}
 
 	return render(request, 'app/core/tag.html', context)
