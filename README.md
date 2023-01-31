@@ -1518,6 +1518,15 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 ## 19. CKEDITOR
 
 
+#### 19.1 Install CKEditor
 
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Install CKEditor
+        https://django-ckeditor.readthedocs.io/en/latest/
+        (venv3932) λ pip install django-ckeditor
         
 
