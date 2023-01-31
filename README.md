@@ -1528,5 +1528,55 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         2. Install CKEditor
         https://django-ckeditor.readthedocs.io/en/latest/
         (venv3932) λ pip install django-ckeditor
-        
 
+
+#### 19.2 Setting up CDEditor basic features         
+
+        Aktivities:
+
+        1. Modified
+        modified:   README.md
+
+        2. Configure CKEditor
+        modified:   config/settings.py
+
+        INSTALLED_APPS = [
+
+                    ...
+                    'taggit',
+                    'ckeditor',]
+
+        # CKEditor path for media uploads
+        CKEDITOR_UPLOAD_PATH = 'media/'
+
+        3. Add path for CKEditor 
+        modified:   config/urls.py
+
+        # CKEditor
+        path('ckeditor/', include('ckeditor_uploader.urls')),
+
+        4. Use CKEditor in the model
+        modified:   app/core/models.py
+
+        from ckeditor_uploader.fields import RichTextUploadingField
+
+        # Vendor model
+        description = RichTextUploadingField(null=True, blank=True, default='I am a great vendor')
+
+        # Product model
+        description = RichTextUploadingField(null=True, blank=True, default='This is the product')
+        specifications = RichTextUploadingField(null=True, blank=True)
+
+        5. Run and apply migrations
+        new file:   app/core/migrations/0032_alter_product_description_and_more.py
+
+        6. Tesing: 
+        > runserver 
+        > go to admin 
+        > open Products
+
+        DONE :)
+
+        NOTE:
+
+        Basic features of the CKEditor shows up

@@ -12,6 +12,9 @@ urlpatterns = [
 
     # userauth
     path('user/', include('app.userauth.urls')),
+
+    # CKEditor
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG:

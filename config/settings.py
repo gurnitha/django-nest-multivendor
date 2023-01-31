@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     # Third parties
     'taggit',
+    'ckeditor',
 
     # New locals
     'app.userauth.apps.UserauthConfig',
@@ -186,3 +187,6 @@ JAZZMIN_SETTINGS = {
     # Copyright on the footer
     "copyright": "Developed with love by ING",
 }
+
+# CKEditor path for media uploads
+CKEDITOR_UPLOAD_PATH = 'media/'
