@@ -1580,3 +1580,33 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         NOTE:
 
         Basic features of the CKEditor shows up
+
+
+#### 19.3 Fixing issue address in context_processors
+
+        Aktivities:
+
+        1. Modified readme file
+        modified:   README.md
+
+        2. Fixing issue by using try block
+        modified:   app/core/context_processors.py
+
+        # Locals
+        
+        BEFORE:
+
+        address = Address.objects.get(user=request.user)
+
+        AFTER:
+
+        try:
+                address = Address.objects.get(user=request.user)
+                # print(address)
+        except:
+                address = None
+
+
+        DONE :)
+
+        NOTE: It was an issue before using try block

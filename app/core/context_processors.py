@@ -14,13 +14,18 @@ def default(request):
 	# print(cat_values3)
 	# print(cat_values4)
 	# Get the address who ever logged in
-	# address = Address.objects.get(user=request.user)
-	# print(address)
+	
+	try:
+		address = Address.objects.get(user=request.user)
+		# print(address)
+	except:
+		address = None
+		
 	return {
 		'categories': categories,
 		'cat_keys': cat_values,
 		'cat_keys2': cat_values2,
 		'cat_keys3': cat_values3,
 		'cat_keys4': cat_values4,
-		# 'address':address,
+		'address':address,
 	}
