@@ -317,63 +317,31 @@
                                                         <div class="col-lg-8">
                                                             <h4 class="mb-30">Customer questions & answers</h4>
                                                             <div class="comment-list">
+                                                                {% if reviews %}
+                                                                {% for review in reviews %}
                                                                 <div class="single-comment justify-content-between d-flex mb-30">
                                                                     <div class="user justify-content-between d-flex">
                                                                         <div class="thumb text-center">
-                                                                            <img src="{% static 'assets/imgs/blog/author-2.png' %}" alt="" />
-                                                                            <a href="#" class="font-heading text-brand">Sienna</a>
+                                                                            <img src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="" />
+                                                                            <a href="#" class="font-heading text-brand">{{review.user.username|title}}</a>
                                                                         </div>
                                                                         <div class="desc">
                                                                             <div class="d-flex justify-content-between mb-10">
                                                                                 <div class="d-flex align-items-center">
-                                                                                    <span class="font-xs text-muted">December 4, 2022 at 3:12 pm </span>
+                                                                                    <span class="font-xs text-muted">{{review.created|date:'d F Y'}}</span>
                                                                                 </div>
                                                                                 <div class="product-rate d-inline-block">
                                                                                     <div class="product-rating" style="width: 100%"></div>
                                                                                 </div>
                                                                             </div>
-                                                                            <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt? <a href="#" class="reply">Reply</a></p>
+                                                                            <p class="mb-10">{{review.review}} <a href="#" class="reply">Reply</a></p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="single-comment justify-content-between d-flex mb-30 ml-30">
-                                                                    <div class="user justify-content-between d-flex">
-                                                                        <div class="thumb text-center">
-                                                                            <img src="{% static 'assets/imgs/blog/author-3.png' %}" alt="" />
-                                                                            <a href="#" class="font-heading text-brand">Brenna</a>
-                                                                        </div>
-                                                                        <div class="desc">
-                                                                            <div class="d-flex justify-content-between mb-10">
-                                                                                <div class="d-flex align-items-center">
-                                                                                    <span class="font-xs text-muted">December 4, 2022 at 3:12 pm </span>
-                                                                                </div>
-                                                                                <div class="product-rate d-inline-block">
-                                                                                    <div class="product-rating" style="width: 80%"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt? <a href="#" class="reply">Reply</a></p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="single-comment justify-content-between d-flex">
-                                                                    <div class="user justify-content-between d-flex">
-                                                                        <div class="thumb text-center">
-                                                                            <img src="{% static 'assets/imgs/blog/author-4.png' %}" alt="" />
-                                                                            <a href="#" class="font-heading text-brand">Gemma</a>
-                                                                        </div>
-                                                                        <div class="desc">
-                                                                            <div class="d-flex justify-content-between mb-10">
-                                                                                <div class="d-flex align-items-center">
-                                                                                    <span class="font-xs text-muted">December 4, 2022 at 3:12 pm </span>
-                                                                                </div>
-                                                                                <div class="product-rate d-inline-block">
-                                                                                    <div class="product-rating" style="width: 80%"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt? <a href="#" class="reply">Reply</a></p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                {% endfor %}
+                                                                {% else %}
+                                                                <p>No reviews found ...</p>
+                                                                {% endif %}
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4">
@@ -454,15 +422,15 @@
                                     <div class="col-12">
                                         <h2 class="section-title style-1 mb-30">Related products</h2>
                                     </div>
-                                    {% if rel_products %}
-                                    {% for rel_product in rel_products %}
                                     <div class="col-12">
                                         <div class="row related-products">
+                                            {% if rel_products %}
+                                            {% for rel_product in rel_products %}
                                             <div class="col-lg-3 col-md-4 col-12 col-sm-6">
                                                 <div class="product-cart-wrap hover-up">
                                                     <div class="product-img-action-wrap">
                                                         <div class="product-img product-img-zoom">
-                                                            <a href="{% url 'core:product_detail_view' rel_product.pid %}" tabindex="0">
+                                                            <a href="shop-product-right.html" tabindex="0">
                                                                 <img class="default-img" src="{{rel_product.prod_image.url}}" alt="" />
                                                                 <img class="hover-img" src="{{rel_product.prod_image_hover.url}}" alt="" />
                                                             </a>
@@ -476,10 +444,8 @@
                                                             <span class="hot">Hot: -{{rel_product.get_percentage|floatformat:0}}</span>
                                                         </div>
                                                     </div>
-
-                                                    <!-- realted product by category -->
                                                     <div class="product-content-wrap">
-                                                        <h2><a href="{% url 'core:product_detail_view' rel_product.pid %}" tabindex="0">{{rel_product.title|truncatechars:25}}</a></h2>
+                                                        <h2><a href="shop-product-right.html" tabindex="0">{{rel_product.title|truncatechars:25}}</a></h2>
                                                         <div class="rating-result" title="90%">
                                                             <span> </span>
                                                         </div>
@@ -488,17 +454,16 @@
                                                             <span class="old-price">${{rel_product.old_price}}</span>
                                                         </div>
                                                     </div>
-                                                    <!-- realted product by category -->
                                                 </div>
                                             </div>
+                                            {% endfor %}
+                                            {% else %}
+                                            <div class="col-12">
+                                                <p>There is no related product found ...</p>
+                                            </div>
+                                            {% endif %}
                                         </div>
                                     </div>
-                                    {% endfor %}
-                                    {% else %}
-                                    <div class="col-12">
-                                    <p>There is no related product found ...</p>
-                                    </div>
-                                    {% endif %}
                                 </div>
                                 <!-- related products -->
                             </div>

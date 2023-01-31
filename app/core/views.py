@@ -8,7 +8,7 @@ from django.shortcuts import render, get_object_or_404
 from django.db.models import Count, Avg 
 
 # Locals
-from app.core.models import Product, Category, Vendor
+from app.core.models import Product, Category, Vendor, ProductReview
 from taggit.models import Tag  
 
 # Create your views here.
@@ -52,7 +52,7 @@ def product_detail_view(request, any):
 	# print(products)
 
 	# Getting all review of each product
-	reviews = ProductReview.objects.filter(product=product).order_by('-date')
+	reviews = ProductReview.objects.filter(product=product).order_by('-created')
 
 	context = {
 		'product':product, 

@@ -1681,3 +1681,25 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         # Getting all review of each product
         reviews = ProductReview.objects.filter(product=product).order_by('-date')
+
+
+#### 20.2 Rendering reviews in the Customer questions & answers
+
+        Aktivities:
+
+        1. Modified readme file
+        modified:   README.md
+
+        2. Getting all review of each product
+        modified:   app/core/views.py
+
+        reviews = ProductReview.objects.filter(product=product).order_by('-created')
+
+        3. Redering reviews object
+        modified:   templates/app/core/product_detail.html
+
+        DONE :)
+
+        NEXT: Product Rating
+
+
