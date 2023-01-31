@@ -1651,3 +1651,7 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         1. Run the server
         2. Go to the broser with this link: 
         Open this link: http://127.0.0.1:8000/product-detail/prod24ghdcdea3/
+
+
+## 20. PRODUCT REVIEWS
+
