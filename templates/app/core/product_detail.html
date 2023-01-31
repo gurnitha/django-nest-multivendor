@@ -3,6 +3,12 @@
 
 {% block content %}
 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+    <script>hljs.initHighlighthingOnLoad();</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script src="{% static 'assets/js/prism.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/prism.css' %}">
+
     <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
@@ -80,7 +86,7 @@
                                                 </div>
                                             </div>
                                             <div class="short-desc mb-30">
-                                                <p class="font-lg">{{product.description|truncatechars:150}}</p>
+                                                <p class="font-lg">{{product.description|safe|truncatechars:150}}</p>
                                             </div>
                                             <div class="attr-detail attr-size mb-30">
                                                 <strong class="mr-10" style="color:red;">Size / Weight (not yet): </strong>
@@ -144,7 +150,7 @@
                                         <div class="tab-content shop_info_tab entry-main-content">
                                             <div class="tab-pane fade show active" id="Description">
                                                 <div class="">
-                                                    <p>{{product.description}}</p>
+                                                    <p>{{product.description|safe}}</p>
                                                 </div>
                                                 <!-- <div class="">
                                                     <p>Uninhibited carnally hired played in whimpered dear gorilla koala depending and much yikes off far quetzal goodness and from for grimaced goodness unaccountably and meadowlark near unblushingly crucial scallop tightly neurotic hungrily some and dear furiously this apart.</p>

@@ -189,4 +189,21 @@ JAZZMIN_SETTINGS = {
 }
 
 # CKEditor path for media uploads
-CKEDITOR_UPLOAD_PATH = 'media/'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+# CKEDITOR_UPLOAD_PATH = 'media/'
+
+# Addding more features to CKEditor
+CKEDITOR_CONFIGS = {
+    'default':{
+        'skin': 'moono',
+        'codeSnippet_theme': 'monokai',
+        'toolbar': 'all',
+        'extraPlugins': ','.join(
+            [
+                'codesnippet',
+                'widget',
+                'dialog'
+            ]
+        ),
+    }
+}

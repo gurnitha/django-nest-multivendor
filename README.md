@@ -1530,7 +1530,7 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         (venv3932) λ pip install django-ckeditor
 
 
-#### 19.2 Setting up CDEditor basic features         
+#### 19.2 Setting up CKEditor basic features         
 
         Aktivities:
 
@@ -1610,3 +1610,44 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         DONE :)
 
         NOTE: It was an issue before using try block
+
+
+#### 19.4 Adding more features to CKEditor basic features and some js and css in the product-detail page
+
+        Aktivities:
+
+        1. Modified readme file
+        modified:   README.md
+
+        2. Add more configurations
+        modified:   config/settings.py
+
+        3. Create new product from admin panel
+        new file:   media/media/2023/01/31/blog-3.png
+        new file:   media/media/2023/01/31/cat-13.png
+        new file:   media/product-images/thumbnails/product-10-1.jpg
+        new file:   media/product-images/thumbnails/product-2-1.jpg
+        new file:   media/product-images/thumbnails/product-2-2.jpg
+        new file:   media/uploads/2023/01/31/product-13-2.jpg
+        new file:   media/user_directory_path/product-10-1_wL4SZLf.jpg
+        new file:   media/user_directory_path/product-10-2.jpg
+
+        4. Add some js and css, like this:
+        modified:   templates/app/core/product_detail.html
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+        <script>hljs.initHighlighthingOnLoad();</script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+        <script src="{% static 'assets/js/prism.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/prism.css' %}">
+
+        NOTE:
+
+        1. The result is so amazing: it colored the html code, it just looks like in the text-editor
+        2. But it has no html, copy button on the top-right corner
+
+        EXAMPLE:
+
+        1. Run the server
+        2. Go to the broser with this link: 
+        Open this link: http://127.0.0.1:8000/product-detail/prod24ghdcdea3/
