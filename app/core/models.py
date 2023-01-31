@@ -222,13 +222,13 @@ class ProductReview(models.Model):
 		(2, '★★☆☆☆'),
 		(3, '★★★☆☆'),
 		(4, '★★★★☆'),
-		(5, '★★★★'),
+		(5, '★★★★★'),
 	)
 
 	user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-	product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+	product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, related_name='reviews')
 	review = models.TextField()
-	rating = models.ImageField(choices=PRODUCT_RATING_CHOICES, default=None)
+	rating = models.IntegerField(choices=PRODUCT_RATING_CHOICES, default=None)
 	created = models.DateTimeField(auto_now_add=True)
 
 	class Meta:

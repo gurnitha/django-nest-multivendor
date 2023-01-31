@@ -1655,3 +1655,32 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
 ## 20. PRODUCT REVIEWS
 
+
+#### 20.1 Adding logic to product_detail_view
+
+        Aktivities:
+
+        1. Modified readme file
+        modified:   README.md
+
+        2. Modified ProductReview model
+        modified:   app/core/models.py
+
+        BEFORE:
+        rating = models.ImageField(choices=PRODUCT_RATING_CHOICES, default=None) # ImageField
+
+        AFTER:
+        rating = models.IntegerField(choices=PRODUCT_RATING_CHOICES, default=None) # IntegerField
+
+        3. Run and apply migrations
+        new file:   app/core/migrations/0033_alter_productreview_rating.py
+        new file:   app/core/migrations/0034_alter_productreview_rating.py
+
+        4. Add logic to views
+        modified:   app/core/views.py
+
+        # Getting all review of each product
+        reviews = ProductReview.objects.filter(product=product).order_by('-date')
+
+        # Getting average review
+        average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))

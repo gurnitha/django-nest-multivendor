@@ -1,7 +1,11 @@
 # app/core/views.py
 
 # Django modules
+# from math import prod 
+# from stripe import Review 
+from django.http import HttpResponse 
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Count, Avg 
 
 # Locals
 from app.core.models import Product, Category, Vendor
@@ -46,10 +50,20 @@ def product_detail_view(request, any):
 	# Get related products
 	products = product.related_products.all()
 	# print(products)
+
+	# Getting all review of each product
+	reviews = ProductReview.objects.filter(product=product).order_by('-date')
+
+	# Getting average review
+	average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))
+
+
 	context = {
 		'product':product, 
 		'products':products,
 		'rel_products':rel_products,
+		'reviews':reviews,
+		'average_rating':average_rating,
 	}
 	return render(request, 'app/core/product_detail.html', context)
 
