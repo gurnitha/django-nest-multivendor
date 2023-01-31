@@ -1514,5 +1514,10 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         3. Add link to tags to show product-detail by tag
         modified:   templates/app/core/product_detail.html
 
+
+## 19. CKEDITOR
+
+
+
         
 
