@@ -1681,6 +1681,3 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         # Getting all review of each product
         reviews = ProductReview.objects.filter(product=product).order_by('-date')
-
-        # Getting average review
-        average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))
