@@ -144,7 +144,7 @@
                                                 <a class="nav-link" id="Vendor-info-tab" data-bs-toggle="tab" href="#Vendor-info">Vendor</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews">Reviews (3)</a>
+                                                <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews">Reviews ({{reviews.count}})</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content shop_info_tab entry-main-content">
@@ -347,10 +347,10 @@
                                                         <div class="col-lg-4">
                                                             <h4 class="mb-30">Customer reviews</h4>
                                                             <div class="d-flex mb-30">
-                                                                <div class="product-rate d-inline-block mr-15">
+                                                                <!-- <div class="product-rate d-inline-block mr-15">
                                                                     <div class="product-rating" style="width: 90%"></div>
-                                                                </div>
-                                                                <h6>4.8 out of 5</h6>
+                                                                </div> -->
+                                                                <h6>{{average_rating.rating|floatformat:1}} out of 5.0</h6>
                                                             </div>
                                                             <div class="progress">
                                                                 <span>5 star</span>

@@ -1703,3 +1703,33 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         NEXT: Product Rating
 
 
+#### 20.3 Rendering product rating and sum reviews of a product
+
+        Aktivities:
+
+        1. Modified readme file
+        modified:   README.md
+
+        2. Getting average review
+        modified:   app/core/views.py
+
+        average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))
+
+        3. Renderig average_rating and sum of reviews
+        modified:   templates/app/core/product_detail.html
+
+        Reviews ({{reviews.count}})
+
+        <h4 class="mb-30">Customer reviews</h4>
+        <div class="d-flex mb-30">
+        <!-- <div class="product-rate d-inline-block mr-15">
+            <div class="product-rating" style="width: 90%"></div>
+        </div> -->
+        <h6>{{average_rating.rating|floatformat:1}} out of 5.0</h6> <<------------
+        </div
+
+        DONE :)
+
+        NOTE:
+
+        1. Showing number of average rating, not the star  

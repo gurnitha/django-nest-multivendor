@@ -54,11 +54,16 @@ def product_detail_view(request, any):
 	# Getting all review of each product
 	reviews = ProductReview.objects.filter(product=product).order_by('-created')
 
+	# Getting average review
+	average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))
+
+
 	context = {
 		'product':product, 
 		'products':products,
 		'rel_products':rel_products,
 		'reviews':reviews,
+		'average_rating':average_rating,
 	}
 	return render(request, 'app/core/product_detail.html', context)
 
