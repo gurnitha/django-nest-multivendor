@@ -378,13 +378,13 @@
                                                 </div>
                                                 <!--comment form-->
                                                 <div class="comment-form">
-                                                    <h4 class="mb-15">Add a review</h4>
+                                                    <h4 class="mb-15 hide-add-review">Add a review</h4>
                                                     <!-- <div class="product-rate d-inline-block mb-30"></div> -->
                                                     <strong class="text-success" id="review-res"></strong>
                                                     <div class="row">
                                                         <div class="col-lg-8 col-md-12">
                                                             <form 
-                                                                class="form-contact comment_form" 
+                                                                class="form-contact comment_form hide-comment-form" 
                                                                 action="{% url 'core:ajax_add_review' product.id %}" 
                                                                 id="commentForm"
                                                                 method="post">

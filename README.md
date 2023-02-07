@@ -1926,3 +1926,43 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         1. Review added to db
         2. But to see the review in the product-detail page, the page MUST be refresh
+
+
+#### 20.5 Adding product reviews with ajax jquery - hiding the form after adding review
+
+        now when that's done the next thing I
+        will do is go ahead and and hide this
+        review button right because we don't
+        want to show this review button again
+        because they added a review.
+
+        and in order
+        to do that we could just look for the
+        reviewers in or rather instead of hiding
+        the button we can even hide the form all
+        at once right.
+
+        so instead of hiding
+        hiding the only the button and the
+        button alone we just go ahead and hide
+        the form because that's going to be way
+        better.
+
+
+        1. Modified readme file
+        modified:   README.md
+
+        2. Adding class
+        modified:   templates/app/core/product_detail.html
+
+        h4 class="mb-15 hide-add-review">Add a review</h4>
+
+        <form 
+                class="form-contact comment_form hide-comment-form" 
+
+        3. Modified custom.js
+
+        $(".hide-comment-form").hide()
+        $(".hide-add-review").hide()
+
+        DONE :)
