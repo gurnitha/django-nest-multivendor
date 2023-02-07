@@ -2050,3 +2050,25 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         1. The append does not show the date in user review
 
         NEXT: Working with the date
+
+
+#### 20.7 Adding product reviews with ajax jquery - Adding stars
+
+        Aktivities:
+
+        1. Modified readme file
+        modified:   README.md
+
+        2. Adding a cdn font-awesome css
+        modified:   templates/base.html
+
+        3. Modified custom.js
+
+
+        NOTE: 
+
+        1. It worked.
+        2. Stars display after refreshing the browser.
+        3. All review comes with 4 stars after refreshment.
+
+        NEXT: Solving the stars, then the date
