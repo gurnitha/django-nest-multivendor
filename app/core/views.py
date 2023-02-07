@@ -3,12 +3,13 @@
 # Django modules
 # from math import prod 
 # from stripe import Review 
-from django.http import HttpResponse 
+from django.http import HttpResponse, JsonResponse 
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Count, Avg 
 
 # Locals
 from app.core.models import Product, Category, Vendor, ProductReview
+from app.core.forms import ProductReviewForm
 from taggit.models import Tag  
 
 # Create your views here.
@@ -57,6 +58,8 @@ def product_detail_view(request, any):
 	# Getting average review
 	average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))
 
+	# Product Review Form
+	review_form = ProductReviewForm()
 
 	context = {
 		'product':product, 
@@ -64,6 +67,7 @@ def product_detail_view(request, any):
 		'rel_products':rel_products,
 		'reviews':reviews,
 		'average_rating':average_rating,
+		'review_form':review_form
 	}
 	return render(request, 'app/core/product_detail.html', context)
 
@@ -130,3 +134,47 @@ def tag_list_view(request, tag_slug=None):
 	}
 
 	return render(request, 'app/core/tag.html', context)
+
+
+
+# Ajax User Review
+'''Reviewing a product using a parameter of its own id (pid)'''
+def ajax_add_review(request, pid):
+    
+    '''get aproduct by its id (pid)'''
+    product = Product.objects.get(pk=pid)
+    
+    '''get the user who wants to review that product'''
+    user = request.user
+
+    '''
+    Create review: get things that passes by the user from the review form
+    '''
+    review = ProductReview.objects.create(
+        # get the user, product, review and rating
+        # you cat also get the date, but we will use js to do that
+        user=user,
+        product=product,
+        review=request.POST['review'],
+        rating=request.POST['rating'],
+    )
+
+    # Put in the context as variable
+    context = {
+        'user':user.username,
+        'review':request.POST['review'],
+        'rating':request.POST['rating'],
+    }
+
+    # Create avarage rating review
+    average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))
+
+    # Js for the reating
+    return JsonResponse(
+        # It should be true, bc use write something in the form
+        {
+            'bool':True,
+            'context':context,
+            'average_rating':average_rating,
+        }
+    )

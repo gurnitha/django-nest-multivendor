@@ -1733,3 +1733,196 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         NOTE:
 
         1. Showing number of average rating, not the star  
+
+
+#### 20.4 Adding product reviews with ajax jquery
+
+        Aktivities:
+
+        1. Modified readme file
+        modified:   README.md
+
+        2. Create ProductReviewForm
+        new file:   app/core/forms.py
+
+        # app/core/forms.py
+
+        # Import django modules
+        from django import forms
+        from stripe import Review
+
+        # Import from locals
+        from app.core.models import ProductReview
+
+
+        class ProductReviewForm(forms.ModelForm):
+                review = forms.CharField(widget=forms.Textarea(attrs={'placeholder':"Write review"}))
+
+                class Meta:
+                        model = ProductReview
+                        fields = ['review', 'rating']
+
+        3. Create url                
+        modified:   app/core/urls.py
+
+        # Add review
+        path('ajax-add-review/<int:pid>/', views.ajax_add_review, name='ajax_add_review'),
+
+        4. Create
+        modified:   app/core/views.py
+
+        # app/core/views.py
+
+        # Django modules
+        ...
+        from django.http import HttpResponse, JsonResponse 
+        ...
+        from app.core.forms import ProductReviewForm
+
+        # Product Detail
+        def product_detail_view(request, any):
+                ...
+
+                # Product Review Form
+                review_form = ProductReviewForm()
+
+                context = {
+                        ...
+                        'review_form':review_form
+                }
+
+
+        # Ajax User Review
+        '''Reviewing a product using a parameter of its own id (pid)'''
+        def ajax_add_review(request, pid):
+            
+            '''get aproduct by its id (pid)'''
+            product = Product.objects.get(pk=pid)
+            
+            '''get the user who wants to review that product'''
+            user = request.user
+
+            '''
+            Create review: get things that passes by the user from the review form
+            '''
+            review = ProductReview.objects.create(
+                # get the user, product, review and rating
+                # you cat also get the date, but we will use js to do that
+                user=user,
+                product=product,
+                review=request.POST['review'],
+                rating=request.POST['rating'],
+            )
+
+            # Put in the context as variable
+            context = {
+                'user':user.username,
+                'review':request.POST['review'],
+                'rating':request.POST['rating'],
+            }
+
+            # Create avarage rating review
+            average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))
+
+            # Js for the reating
+            return JsonResponse(
+                # It should be true, bc use write something in the form
+                {
+                    'bool':True,
+                    'context':context,
+                    'average_rating':average_rating,
+                }
+            )
+
+        5. Render form instance    
+        modified:   templates/app/core/product_detail.html
+
+         <!--comment form-->
+        <div class="comment-form">
+            <h4 class="mb-15">Add a review</h4>
+            <!-- <div class="product-rate d-inline-block mb-30"></div> -->
+            <strong class="text-success" id="review-res"></strong>
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <form 
+                        class="form-contact comment_form" 
+                        action="{% url 'core:ajax_add_review' product.id %}" 
+                        id="commentForm"
+                        method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    {{review_form.review}}
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    {{review_form.rating}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="button button-contactForm">Submit Review</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        6. Create ajax jquery script
+        new     :   static/assets/js/custom.js
+
+        console.log("working fine");
+
+        $("#commentForm").submit(function(e){
+
+                // prevent the browser from refreshing
+                e.preventDefault();
+
+                // Using ajax
+                $.ajax({
+
+                        // serialize data comming from the form
+                        data: $(this).serialize(),
+
+                        // get the form attribute (method)
+                        method: $(this).attr("method"),
+
+                        // get the url (action) attribute from
+                        url: $(this).attr("action"),
+
+                        // define data type
+                        dataType: "json",
+
+                        // Console log
+                        success: function(res){
+                                console.log("Comment succssefully saved to database ...");
+
+                                if(res.bool == true){
+                                        $("#review-res").html("Review added succssefully ...");
+                                }
+                        }
+
+                        })
+        })
+
+        7. Load custom.js
+        modified:   templates/base.html
+
+        <script src="{% static 'assets/js/custom.js' %}"></script> 
+
+        8. Modified ProductReviewAdmin   
+        modified:   app/core/admin.py
+
+        class ProductReviewAdmin(admin.ModelAdmin):
+        list_display = ['user', 'product',
+                        'review', 'rating']
+
+
+        8. Testing
+
+        NOTE:
+
+        1. Review added to db
+        2. But to see the review in the product-detail page, the page MUST be refresh

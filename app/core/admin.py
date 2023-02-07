@@ -43,7 +43,7 @@ class CartOrderItemAdmin(admin.ModelAdmin):
 
 class ProductReviewAdmin(admin.ModelAdmin):
 	list_display = ['user', 'product',
-			'rating']
+			'review', 'rating']
 
 
 class WishlistAdmin(admin.ModelAdmin):
