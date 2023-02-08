@@ -2074,7 +2074,7 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         NEXT: Solving the stars, then the date
 
 
-#### 20.7 Adding product reviews with ajax jquery - Solving star
+#### 20.8 Adding product reviews with ajax jquery - Solving star
 
         Aktivities:
 
@@ -2173,3 +2173,49 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         2. Date has not been fixed yet
 
         NEXT: Fixing date
+
+
+#### 20.9 Adding product reviews with ajax jquery - Adding currentdate
+
+        Aktivities:
+
+        1. Modified readme file
+        modified:   README.md
+
+        2. Modified custom.js by adding currentitem
+
+        console.log("working fine");
+
+        // Defining name of the months
+        const monthNames = [
+                "January", "February", "March", "April", "May", "June", 
+                "July", "August", "September", "October", "Novpember", "December" 
+        ]
+
+        $("#commentForm").submit(function(e){
+
+                // prevent the browser from refreshing
+                e.preventDefault();
+
+                // Creating date-time
+                let currentdate = new Date();
+                let currenttime = currentdate.getDate() + " " + monthNames[currentdate.getUTCMonth()] + ", " + currentdate.getFullYear()
+
+        ...
+
+                                        _html += '<div class="desc">'
+                                        _html += '<div class="d-flex justify-content-between mb-10">'
+                                        _html += '<div class="d-flex align-items-center">'
+                                        // _html += '<span class="font-xs text-muted">{{review.created|date:"d F Y"}}</span>'
+                                        _html += '<span class="font-xs text-muted">' + currenttime + '</span>'
+                                        _html += '</div>'
+
+
+        NOTE:
+
+        1. It worked.
+        2. The same user still can comment again and again to a product
+
+        NEXT: Let a user to make ONE comment only to a spesific product
+
+        
