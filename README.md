@@ -2072,3 +2072,104 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
         3. All review comes with 4 stars after refreshment.
 
         NEXT: Solving the stars, then the date
+
+
+#### 20.7 Adding product reviews with ajax jquery - Solving star
+
+        Aktivities:
+
+        1. Modified readme file
+        modified:   README.md
+
+        2. Looping star in Customer questions & answers
+        modified:   templates/app/core/product_detail.html
+
+        ...
+        <h4 class="mb-30">Customer questions & answers</h4>
+
+        <!-- <div class="product-rate d-inline-block">
+            <div class="product-rating" style="width: 100%"></div>
+        </div> -->
+
+        {% for star in review.rating|ljust:review.rating %}
+        <div class=" d-inline-block">
+            <i class="fa fa-star" style="color: #f3da35;"></i>
+        </div>
+        {% endfor %}
+
+        3. Adding font-awesome
+        modified:   templates/base.html
+
+        <!-- FontAwesome -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+        4. Modified custom.js
+        console.log("working fine");
+
+        $("#commentForm").submit(function(e){
+
+                // prevent the browser from refreshing
+                e.preventDefault();
+
+                // Using ajax
+                $.ajax({
+
+                        // serialize data comming from the form
+                        data: $(this).serialize(),
+
+                        // get the form attribute (method)
+                        method: $(this).attr("method"),
+
+                        // get the url (action) attribute from
+                        url: $(this).attr("action"),
+
+                        // define data type
+                        dataType: "json",
+
+                        // Console log
+                        success: function(res){
+                                console.log("Comment succssefully saved to database ...");
+
+                                if(res.bool == true){
+                                        $("#review-res").html("Review added succssefully ...");
+                                        $(".hide-comment-form").hide()
+                                        $(".hide-add-review").hide()
+
+                                        let _html = '<div class="single-comment justify-content-between d-flex mb-30">'
+                                                _html += '<div class="user justify-content-between d-flex">'
+                                                _html += '<div class="thumb text-center">'
+                                                _html += '<img src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="" />'
+                                                _html += '<a href="#" class="font-heading text-brand">'+ res.context.user +'</a>'
+                                                _html += '</div>'
+
+                                                _html += '<div class="desc">'
+                                                _html += '<div class="d-flex justify-content-between mb-10">'
+                                                _html += '<div class="d-flex align-items-center">'
+                                                _html += '<span class="font-xs text-muted">{{review.created|date:"d F Y"}}</span>'
+                                                _html += '</div>'
+
+                                                for(let i = 1; i <= res.context.rating; i++ ){
+                                _html += '<i class="fa fa-star" style="color: #f3da35;"></i>'
+                                                }
+
+
+                                                _html += '</div>'
+                                                _html += '<p class="mb-10">'+ res.context.review +'</p>'
+
+                                                _html += '</div>'
+                                                _html += '</div>'
+                                                _html += '</div>'
+
+
+                                                $(".comment-list").prepend(_html)
+                                }
+                        }
+                })
+        })
+
+        NOTE:
+
+        1. It worked
+        2. Date has not been fixed yet
+
+        NEXT: Fixing date

@@ -330,9 +330,17 @@
                                                                                 <div class="d-flex align-items-center">
                                                                                     <span class="font-xs text-muted">{{review.created|date:'d F Y'}}</span>
                                                                                 </div>
-                                                                                <div class="product-rate d-inline-block">
+
+                                                                                <!-- <div class="product-rate d-inline-block">
                                                                                     <div class="product-rating" style="width: 100%"></div>
+                                                                                </div> -->
+
+                                                                                {% for star in review.rating|ljust:review.rating %}
+                                                                                <div class=" d-inline-block">
+                                                                                    <i class="fa fa-star" style="color: #f3da35;"></i>
                                                                                 </div>
+                                                                                {% endfor %}
+                                                                                
                                                                             </div>
                                                                             <p class="mb-10">{{review.review}} <a href="#" class="reply">Reply</a></p>
                                                                         </div>
