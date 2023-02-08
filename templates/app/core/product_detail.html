@@ -385,37 +385,42 @@
                                                     </div>
                                                 </div>
                                                 <!--comment form-->
-                                                <div class="comment-form">
-                                                    <h4 class="mb-15 hide-add-review">Add a review</h4>
-                                                    <!-- <div class="product-rate d-inline-block mb-30"></div> -->
-                                                    <strong class="text-success" id="review-res"></strong>
-                                                    <div class="row">
-                                                        <div class="col-lg-8 col-md-12">
-                                                            <form 
-                                                                class="form-contact comment_form hide-comment-form" 
-                                                                action="{% url 'core:ajax_add_review' product.id %}" 
-                                                                id="commentForm"
-                                                                method="post">
-                                                                {% csrf_token %}
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            {{review_form.review}}
+                                                {% if request.user.is_authenticated %}
+                                                {% if make_review == True %}
+                                                    <div class="comment-form">
+                                                        <h4 class="mb-15 hide-add-review">Add a review</h4>
+                                                        <strong class="text-success" id="review-res"></strong>
+                                                        <div class="row">
+                                                            <div class="col-lg-8 col-md-12">
+                                                                <form 
+                                                                    class="form-contact comment_form hide-comment-form" 
+                                                                    action="{% url 'core:ajax_add_review' product.id %}" 
+                                                                    id="commentForm"
+                                                                    method="post">
+                                                                    {% csrf_token %}
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <div class="form-group">
+                                                                                {{review_form.review}}
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <div class="form-group">
+                                                                                {{review_form.rating}}
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            {{review_form.rating}}
-                                                                        </div>
+                                                                    <div class="form-group">
+                                                                        <button type="submit" class="button button-contactForm">Submit Review</button>
                                                                     </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <button type="submit" class="button button-contactForm">Submit Review</button>
-                                                                </div>
-                                                            </form>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                {% endif %}
+                                                {% endif %}
+
+
                                             </div>
                                         </div>
                                     </div>

@@ -61,13 +61,27 @@ def product_detail_view(request, any):
 	# Product Review Form
 	review_form = ProductReviewForm()
 
+	# Preventing a user to make review for a spesific product MORE THEN ONE TIME
+	make_review = True 
+
+	#1 Check if user is logged in
+	if request.user.is_authenticated:
+		#2 If user logged ini, count his review
+		user_review_count = ProductReview.objects.filter(user=request.user, product=product).count()
+
+		#3 If user have made a review ( > 0 or one), 
+		#  then dont let him make another review
+		if user_review_count > 0:
+			make_review = False
+
 	context = {
 		'product':product, 
 		'products':products,
 		'rel_products':rel_products,
 		'reviews':reviews,
 		'average_rating':average_rating,
-		'review_form':review_form
+		'review_form':review_form,
+		'make_review':make_review
 	}
 	return render(request, 'app/core/product_detail.html', context)
 

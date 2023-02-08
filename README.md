@@ -2218,4 +2218,67 @@ Github repository: https://github.com/gurnitha/django-nest-multivendor
 
         NEXT: Let a user to make ONE comment only to a spesific product
 
+
+#### 20.10 Adding product reviews with ajax jquery - Preventing a user to make more than one comment for a spesific product
+
+        Aktivities:
+
+        1. Modified readme file
+        modified:   README.md
+
+        2. Add logic to prevent user to make more than one time review
+        modified:   app/core/views.py
+
+        # Preventing a user to make review for a spesific product MORE THEN ONE TIME
+        make_review = True 
+
+        #1 Check if user is logged in
+        if request.user.is_authenticated:
+                #2 If user logged ini, count his review
+                user_review_count = ProductReview.objects.filter(user=request.user, product=product).count()
+
+                #3 If user have made a review ( > 0 or one), 
+                #  then dont let him make another review
+                if user_review_count > 0:
+                        make_review = False
+
+        3. Add the logic to the form: Add a review
+        modified:   templates/app/core/product_detail.html
+
+        {% if request.user.is_authenticated %}
+        {% if make_review == True %}
+            <div class="comment-form">
+                <h4 class="mb-15 hide-add-review">Add a review</h4>
+                <strong class="text-success" id="review-res"></strong>
+                <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                        <form 
+                            class="form-contact comment_form hide-comment-form" 
+                            action="{% url 'core:ajax_add_review' product.id %}" 
+                            id="commentForm"
+                            method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{review_form.review}}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{review_form.rating}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="button button-contactForm">Submit Review</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% endif %}
+
+        DONE :)
         
